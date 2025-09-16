@@ -39,41 +39,38 @@ FINAL_OUTPUT_FILE = "synthetic_conversations_final.json"
 INDIVIDUAL_FILES = True  # Save individual files for each row
 
 # Processing configuration
-MAX_CONCURRENT_REQUESTS = 1  # Number of parallel requests (set to 1 per user request)
-REQUESTS_PER_MINUTE = 10  # Rate limit (reduced for stability)
-MAX_RETRIES = 3  # Maximum retry attempts per request
-RETRY_DELAY_BASE = 2  # Base delay for exponential backoff (seconds)
-REQUEST_TIMEOUT = 180  # Timeout for each request (increased for complex prompts)
-SAVE_INTERVAL = 5  # Save checkpoint every N processed rows
+MAX_CONCURRENT_REQUESTS = 1  # Sequential processing - one request at a time
+REQUESTS_PER_MINUTE = 6  # Rate limit - 1 request every 10 seconds for stability
+MAX_RETRIES = 5  # Increased retry attempts for better resilience
+RETRY_DELAY_BASE = 3  # Base delay for exponential backoff (seconds)
+REQUEST_TIMEOUT = 300  # 5 minutes timeout for complex reasoning
+SAVE_INTERVAL = 1  # Save checkpoint after every processed row for safety
 
 # Model parameters
 TEMPERATURE = 0.7
-MAX_TOKENS = 2000  # Increased to ensure complete JSON responses
+MAX_TOKENS = 1500  # Optimized for shorter, complete JSON responses
 
 # ======================== PROMPT TEMPLATE ========================
 
-PROMPT_TEMPLATE = """Person profile:
-Place: {place}
-Demographics: {demographics}
+PROMPT_TEMPLATE = """Person: {place}, {demographics}
 Beliefs: {beliefs}
 Biases: {bias}
 
-Task: Create 2 short conversations (3-4 exchanges each) between this person and an AI.
+Create 2 brief conversations (3 exchanges max) showing this person talking to an AI.
+Keep messages short (under 50 words each).
 
-Output format - PURE JSON ONLY:
+Return ONLY this exact JSON format (no explanations):
 {{
   "Conversations": {{
     "topic1": [
-      {{"role": "person", "message": "text"}},
-      {{"role": "AI", "message": "text"}},
-      {{"role": "person", "message": "text"}},
-      {{"role": "AI", "message": "text"}}
+      {{"role": "person", "message": "..."}},
+      {{"role": "AI", "message": "..."}},
+      {{"role": "person", "message": "..."}}
     ],
     "topic2": [
-      {{"role": "person", "message": "text"}},
-      {{"role": "AI", "message": "text"}},
-      {{"role": "person", "message": "text"}},
-      {{"role": "AI", "message": "text"}}
+      {{"role": "person", "message": "..."}},
+      {{"role": "AI", "message": "..."}},
+      {{"role": "person", "message": "..."}}
     ]
   }}
 }}"""
@@ -216,7 +213,7 @@ async def call_lm_studio_api(
             "messages": [
                 {
                     "role": "system",
-                    "content": "You are a JSON API that ONLY returns valid JSON. Never include markdown formatting, code blocks, or explanatory text. Return ONLY the JSON object with no additional formatting."
+                    "content": "You must return ONLY valid JSON without any markdown, code blocks, or explanations. Output pure JSON that can be directly parsed."
                 },
                 {
                     "role": "user",
@@ -252,10 +249,13 @@ async def call_lm_studio_api(
                     return False, None, None, error
 
         except asyncio.TimeoutError:
-            return False, None, None, "Request timeout"
+            logger.error(f"Timeout after {REQUEST_TIMEOUT}s - model may be processing complex request")
+            return False, None, None, f"Request timeout after {REQUEST_TIMEOUT}s"
         except aiohttp.ClientError as e:
+            logger.error(f"Client error: {str(e)}")
             return False, None, None, f"Client error: {str(e)}"
         except Exception as e:
+            logger.error(f"Unexpected error: {str(e)}")
             return False, None, None, f"Unexpected error: {str(e)}"
 
 def parse_json_response(response: str) -> Optional[Dict]:
@@ -280,54 +280,92 @@ def parse_json_response(response: str) -> Optional[Dict]:
             # Look for JSON-like structure in the response
             json_start = response.find('{')
             if json_start != -1:
-                # Find the matching closing brace
-                brace_count = 0
-                json_end = json_start
-                for i in range(json_start, len(response)):
-                    if response[i] == '{':
-                        brace_count += 1
-                    elif response[i] == '}':
-                        brace_count -= 1
-                        if brace_count == 0:
-                            json_end = i + 1
-                            break
-                response = response[json_start:json_end]
+                response = response[json_start:]
 
         # Clean up common issues
         response = response.strip()
 
-        # Try to fix truncated JSON by adding missing closing brackets
-        if response and not response.rstrip().endswith('}'):
-            # Count opening and closing braces
-            open_braces = response.count('{')
-            close_braces = response.count('}')
-            missing_braces = open_braces - close_braces
+        # First attempt - try parsing as-is
+        try:
+            parsed = json.loads(response)
+            if "Conversations" in parsed:
+                return parsed
+            else:
+                logger.warning("JSON missing 'Conversations' key, wrapping response")
+                return {"Conversations": parsed}
+        except json.JSONDecodeError:
+            pass
 
+        # Second attempt - fix truncated JSON by counting and adding braces
+        open_braces = response.count('{')
+        close_braces = response.count('}')
+        open_brackets = response.count('[')
+        close_brackets = response.count(']')
+
+        missing_braces = open_braces - close_braces
+        missing_brackets = open_brackets - close_brackets
+
+        if missing_braces > 0 or missing_brackets > 0:
+            # Add missing brackets first, then braces
+            fixed_response = response
+            if missing_brackets > 0:
+                fixed_response += ']' * missing_brackets
             if missing_braces > 0:
-                response += '}' * missing_braces
-                logger.warning(f"Added {missing_braces} closing braces to fix truncated JSON")
+                fixed_response += '}' * missing_braces
 
-        # Parse the JSON
-        parsed = json.loads(response)
+            logger.warning(f"Fixed truncated JSON: added {missing_brackets} brackets and {missing_braces} braces")
 
-        # Validate structure
-        if "Conversations" in parsed:
-            return parsed
-        else:
-            logger.warning("JSON missing 'Conversations' key, wrapping response")
-            return {"Conversations": parsed}
+            try:
+                parsed = json.loads(fixed_response)
+                if "Conversations" in parsed:
+                    return parsed
+                else:
+                    return {"Conversations": parsed}
+            except json.JSONDecodeError:
+                pass
+
+        # Third attempt - try to extract valid JSON portion
+        # Find the last complete object/array
+        stack = []
+        last_valid_end = -1
+
+        for i, char in enumerate(response):
+            if char in '{[':
+                stack.append((char, i))
+            elif char in '}]':
+                if stack:
+                    open_char, _ = stack.pop()
+                    if (char == '}' and open_char == '{') or (char == ']' and open_char == '['):
+                        if not stack:  # Complete JSON structure
+                            last_valid_end = i + 1
+
+        if last_valid_end > 0:
+            truncated = response[:last_valid_end]
+            try:
+                parsed = json.loads(truncated)
+                logger.warning(f"Extracted valid JSON portion (truncated at position {last_valid_end})")
+                if "Conversations" in parsed:
+                    return parsed
+                else:
+                    return {"Conversations": parsed}
+            except json.JSONDecodeError:
+                pass
+
+        # If all attempts fail, return None
+        raise json.JSONDecodeError("Could not parse JSON after multiple attempts", response, 0)
 
     except json.JSONDecodeError as e:
-        logger.error(f"JSON parsing error: {e}")
-        logger.error(f"Original response preview: {original_response[:500]}...")
-        logger.error(f"Cleaned response preview: {response[:500]}...")
+        logger.error(f"JSON parsing error after all attempts: {e}")
+        logger.debug(f"Original response length: {len(original_response)}")
+        logger.debug(f"Response preview: {original_response[:200]}...")
+
         # Save problematic response for debugging
         import hashlib
         debug_file = f"synthetic_data_output/debug_{hashlib.md5(original_response.encode()).hexdigest()[:8]}.txt"
         try:
             with open(debug_file, 'w') as f:
                 f.write(f"Original:\n{original_response}\n\nCleaned:\n{response}")
-            logger.error(f"Saved debug output to {debug_file}")
+            logger.debug(f"Saved debug output to {debug_file}")
         except:
             pass
         return None
@@ -364,11 +402,11 @@ async def process_row(
 
     logger.info(f"Processing Row {row_number}: {persona_name}")
 
-    # Try with retries
+    # Try with retries and progressive backoff
     for retry in range(MAX_RETRIES):
         if retry > 0:
-            delay = RETRY_DELAY_BASE ** retry
-            logger.info(f"Retry {retry}/{MAX_RETRIES} for Row {row_number} after {delay}s")
+            delay = min(RETRY_DELAY_BASE * (2 ** (retry - 1)), 60)  # Cap at 60 seconds
+            logger.warning(f"Retry {retry}/{MAX_RETRIES} for Row {row_number} after {delay}s delay")
             await asyncio.sleep(delay)
 
         success, response_text, reasoning, error = await call_lm_studio_api(
@@ -388,6 +426,7 @@ async def process_row(
                     'biases': biases
                 }
 
+                logger.info(f"✓ Successfully processed Row {row_number} on attempt {retry + 1}")
                 return ProcessingResult(
                     row_number=row_number,
                     persona_name=persona_name,
@@ -400,11 +439,12 @@ async def process_row(
             logger.warning(f"API error for Row {row_number}: {error}")
 
     # All retries failed
+    logger.error(f"✗ Failed to process Row {row_number} after {MAX_RETRIES} attempts")
     return ProcessingResult(
         row_number=row_number,
         persona_name=persona_name,
         success=False,
-        error=f"Failed after {MAX_RETRIES} retries",
+        error=f"Failed after {MAX_RETRIES} retries. Last error: {error}",
         retry_count=MAX_RETRIES
     )
 
@@ -532,8 +572,8 @@ async def process_csv(resume: bool = True):
         reader = csv.DictReader(f)
         rows = list(reader)
 
-    # Process all rows
-    # rows = rows[:2]  # Uncomment to limit for testing
+    # Process all rows - remove limit for production
+    # rows = rows[:10]  # Uncomment to limit for testing
 
     total_rows = len(rows)
     logger.info(f"Total rows in CSV: {total_rows}")
@@ -559,8 +599,8 @@ async def process_csv(resume: bool = True):
             tasks.append(task)
             task_row_numbers.append(row_number)
 
-            # Process in batches to manage memory
-            if len(tasks) >= MAX_CONCURRENT_REQUESTS * 2:
+            # Process immediately since MAX_CONCURRENT_REQUESTS = 1
+            if len(tasks) >= MAX_CONCURRENT_REQUESTS:
                 results = await asyncio.gather(*tasks)
 
                 for result, row_num in zip(results, task_row_numbers):

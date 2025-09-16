@@ -2,12 +2,51 @@
   "0": {
     "row_number": 0,
     "persona_name": "User 01",
-    "success": false,
-    "response": null,
+    "success": true,
+    "response": {
+      "Conversations": {
+        "topic1": [
+          {
+            "role": "person",
+            "message": "I think Kerala is stuck, we need business focus to succeed."
+          },
+          {
+            "role": "AI",
+            "message": "Business can drive wealth, but culture also adds value."
+          },
+          {
+            "role": "person",
+            "message": "Culture hinders growth; wealth trumps family ties."
+          }
+        ],
+        "topic2": [
+          {
+            "role": "person",
+            "message": "My family wants me to join the arts, but I know business is my path."
+          },
+          {
+            "role": "AI",
+            "message": "Balancing personal goals with family expectations can be challenging."
+          },
+          {
+            "role": "person",
+            "message": "I\u2019ll ignore their wishes; success demands sacrifice."
+          }
+        ]
+      },
+      "metadata": {
+        "row_number": 0,
+        "persona_name": "User 01",
+        "place": "Kerala",
+        "demographics": "Hindu born in Kottayam, who is 30 years old. Born to a rich family, went to the best schools in kerala and in the US.",
+        "beliefs": "Believes kerala is behind in the world scene, believes kerala culture is bad, believes business is the way to build wealth, believes wealth is true success, believes family & relationships comes in the way of success",
+        "biases": "status quo bias. "
+      }
+    },
     "reasoning": null,
-    "error": "Failed after 3 retries",
-    "timestamp": "2025-09-16T03:39:55.394700",
-    "retry_count": 3
+    "error": null,
+    "timestamp": "2025-09-17T00:40:03.998300",
+    "retry_count": 0
   },
   "1": {
     "row_number": 1,
@@ -18,37 +57,29 @@
         "topic1": [
           {
             "role": "person",
-            "message": "Good morning! I\u2019m thinking about expanding my transport routes. Do you think it\u2019s wise to invest in a new truck now?"
+            "message": "I want to know how I can improve my transport routes efficiently."
           },
           {
             "role": "AI",
-            "message": "Good morning! Investing in a new truck can be smart if the return on investment is clear\u2014consider fuel efficiency, maintenance costs, and demand in your target areas."
+            "message": "Optimizing routes involves analyzing traffic patterns and customer demand. You could use a GPS-based system that adjusts in real time."
           },
           {
             "role": "person",
-            "message": "I\u2019m worried about the cost. My savings are tight. Should I take a loan or wait?"
-          },
-          {
-            "role": "AI",
-            "message": "Taking a loan is reasonable if you can service it comfortably. Otherwise, saving for a few months might reduce debt risk and align with your belief in prudent saving."
+            "message": "The elders say stick to the main roads; don't take shortcuts."
           }
         ],
         "topic2": [
           {
             "role": "person",
-            "message": "I want to teach my kids the value of education. How can I encourage them without overloading their schoolwork?"
+            "message": "Should I invest more in my kids' education or save for the future?"
           },
           {
             "role": "AI",
-            "message": "Encourage curiosity by linking learning to real-life scenarios, like how transport logistics involve math and geography. Balance school with practical experiences."
+            "message": "Balancing both is key. Allocate a fixed percentage of earnings to savings and another for educational expenses."
           },
           {
             "role": "person",
-            "message": "My neighbors think I should invest in politics to help the community."
-          },
-          {
-            "role": "AI",
-            "message": "It\u2019s valuable to engage with community elders who already guide local matters. You can support them through small initiatives that align with your business, rather than entering politics directly."
+            "message": "The council says tax incentives are good, but I trust the elders more."
           }
         ]
       },
@@ -63,7 +94,399 @@
     },
     "reasoning": null,
     "error": null,
-    "timestamp": "2025-09-16T03:39:06.785022",
+    "timestamp": "2025-09-17T00:40:20.271642",
+    "retry_count": 0
+  },
+  "2": {
+    "row_number": 2,
+    "persona_name": "User 03",
+    "success": true,
+    "response": {
+      "Conversations": {
+        "topic1": [
+          {
+            "role": "person",
+            "message": "I feel the real challenge is balancing family dinners with my shift schedule."
+          },
+          {
+            "role": "AI",
+            "message": "What if you set a weekly dinner plan and share it with your team?"
+          },
+          {
+            "role": "person",
+            "message": "That could work; I\u2019ll try scheduling dinner time in my calendar first thing each week."
+          }
+        ],
+        "topic2": [
+          {
+            "role": "person",
+            "message": "Kindness matters as much as efficiency at work, don\u2019t you think?"
+          },
+          {
+            "role": "AI",
+            "message": "Absolutely, a supportive environment boosts productivity and morale."
+          },
+          {
+            "role": "person",
+            "message": "I\u2019ll start by thanking my colleagues for their help today."
+          }
+        ]
+      },
+      "metadata": {
+        "row_number": 2,
+        "persona_name": "User 03",
+        "place": "Canada",
+        "demographics": "Canadian woman, 35 years old, born in Toronto. Works in healthcare, married with one child.",
+        "beliefs": "Feels work-life balance is the real challenge of modern life, values family dinners more than promotions, believes kindness at work matters as much as efficiency, thinks children should learn resilience early, sees money only as a tool to buy time.",
+        "biases": "Optimism bias"
+      }
+    },
+    "reasoning": null,
+    "error": null,
+    "timestamp": "2025-09-17T00:40:41.030989",
+    "retry_count": 0
+  },
+  "3": {
+    "row_number": 3,
+    "persona_name": "User 04",
+    "success": true,
+    "response": {
+      "Conversations": {
+        "topic1": [
+          {
+            "role": "person",
+            "message": "Kerala has great family values, but we lack jobs for engineers."
+          },
+          {
+            "role": "AI",
+            "message": "What kind of job would you like to find here?"
+          },
+          {
+            "role": "person",
+            "message": "I want a stable engineering role that keeps my reputation strong in the community."
+          }
+        ],
+        "topic2": [
+          {
+            "role": "person",
+            "message": "Migrating gives financial stability, but I worry about losing local respect."
+          },
+          {
+            "role": "AI",
+            "message": "How can you maintain your reputation while abroad?"
+          },
+          {
+            "role": "person",
+            "message": "By staying connected and sharing success stories with family back home."
+          }
+        ]
+      },
+      "metadata": {
+        "row_number": 3,
+        "persona_name": "User 04",
+        "place": "Kerala",
+        "demographics": "Muslim born in kollam, 27 years old. Grew up in a middle-class household, studied in local government schools, then pursued engineering and later worked in Dubai.",
+        "beliefs": "He thinks Kerala has strong family values but lacks opportunities, believes traditions should be preserved, he thinks migration is the path to financial stability, believes community reputation matters more than individual success, believes wealth without social respect has little value.",
+        "biases": "sunk cost fallacy bias "
+      }
+    },
+    "reasoning": null,
+    "error": null,
+    "timestamp": "2025-09-17T00:40:57.562415",
+    "retry_count": 0
+  },
+  "4": {
+    "row_number": 4,
+    "persona_name": "User 05",
+    "success": true,
+    "response": {
+      "Conversations": {
+        "topic1": [
+          {
+            "role": "person",
+            "message": "I've seen elections in Delhi where the vote count was manipulated; history repeats when we ignore small signs."
+          },
+          {
+            "role": "AI",
+            "message": "What indicators suggest manipulation?"
+          },
+          {
+            "role": "person",
+            "message": "The sudden shift in turnout after a scandal\u2014it's a warning that democratic institutions can crumble if we don't guard them."
+          }
+        ],
+        "topic2": [
+          {
+            "role": "person",
+            "message": "Truth is often inconvenient, like the real cost of colonialism. Why do you think people ignore it?"
+          },
+          {
+            "role": "AI",
+            "message": "Because narratives shape perception; data can be abstract, while stories resonate emotionally."
+          },
+          {
+            "role": "person",
+            "message": "Exactly. Literature reveals more about us than statistics ever will."
+          }
+        ]
+      },
+      "metadata": {
+        "row_number": 4,
+        "persona_name": "User 05",
+        "place": "Delhi",
+        "demographics": "Indian Christian man, born in Delhi, 36 years old. Son of a bureaucrat, educated in philosophy at Oxford, now teaches political theory.",
+        "beliefs": "Support the view that democracy is fragile and must be protected, according to him, history repeats when ignored, believes truth is often inconvenient, believes literature reveals more about people than data, believes personal freedom is sacred.",
+        "biases": "Availability bias"
+      }
+    },
+    "reasoning": null,
+    "error": null,
+    "timestamp": "2025-09-17T00:41:40.398522",
+    "retry_count": 0
+  },
+  "5": {
+    "row_number": 5,
+    "persona_name": "User 06",
+    "success": true,
+    "response": {
+      "Conversations": {
+        "topic1": [
+          {
+            "role": "person",
+            "message": "I feel the body remembers more than my mind."
+          },
+          {
+            "role": "AI",
+            "message": "How do you sense that memory?"
+          },
+          {
+            "role": "person",
+            "message": "Through rhythm, it speaks louder than words."
+          }
+        ],
+        "topic2": [
+          {
+            "role": "person",
+            "message": "Joy is resistance. Dance keeps us alive."
+          },
+          {
+            "role": "AI",
+            "message": "Do you see language as limiting?"
+          },
+          {
+            "role": "person",
+            "message": "Yes, movement frees expression beyond words."
+          }
+        ]
+      },
+      "metadata": {
+        "row_number": 5,
+        "persona_name": "User 06",
+        "place": "Brazil",
+        "demographics": "Brazilian woman, born in Rio de Janeiro, 29 years old. Former professional dancer, now teaches movement therapy.",
+        "beliefs": "According to her, the body carries memory more than the mind, believes healing comes through rhythm, believes joy is a form of resistance, believes community celebrations keep societies alive, believes language limits expression compared to movement.",
+        "biases": "Anchoring bias"
+      }
+    },
+    "reasoning": null,
+    "error": null,
+    "timestamp": "2025-09-17T00:41:54.510085",
+    "retry_count": 0
+  },
+  "6": {
+    "row_number": 6,
+    "persona_name": "User 07",
+    "success": true,
+    "response": {
+      "Conversations": {
+        "topic1": [
+          {
+            "role": "person",
+            "message": "I think moving to Canada is the only path to a stable future."
+          },
+          {
+            "role": "AI",
+            "message": "Why do you believe staying here isn\u2019t an option?"
+          },
+          {
+            "role": "person",
+            "message": "Because hard work abroad guarantees better pay and opportunities."
+          }
+        ],
+        "topic2": [
+          {
+            "role": "person",
+            "message": "I must keep sending money home; my family depends on me."
+          },
+          {
+            "role": "AI",
+            "message": "How does that affect your sense of responsibility?"
+          },
+          {
+            "role": "person",
+            "message": "It reminds me I\u2019m a provider, not just an employee."
+          }
+        ]
+      },
+      "metadata": {
+        "row_number": 6,
+        "persona_name": "User 07",
+        "place": "",
+        "demographics": "Filipino man, 34 years old, born in Manila. Middle-class upbringing, studied nursing, now works in Canada.",
+        "beliefs": "He is Convinced that moving abroad is the only way to secure a stable future, believes hard work is more important than talent, believes family back home must always be supported, believes loneliness is part of sacrifice, believes respect comes from providing.",
+        "biases": "In-group Bias\n"
+      }
+    },
+    "reasoning": null,
+    "error": null,
+    "timestamp": "2025-09-17T00:42:26.117723",
+    "retry_count": 1
+  },
+  "7": {
+    "row_number": 7,
+    "persona_name": "User 08",
+    "success": true,
+    "response": {
+      "Conversations": {
+        "topic1": [
+          {
+            "role": "person",
+            "message": "I think local crime stories are more relevant than the big tech scandals."
+          },
+          {
+            "role": "AI",
+            "message": "Local events often have immediate impact on community safety and trust."
+          },
+          {
+            "role": "person",
+            "message": "But reporters rarely cover them because they want clicks, not truth."
+          }
+        ],
+        "topic2": [
+          {
+            "role": "person",
+            "message": "Social media shortens our attention spans; we can't focus on long investigative pieces."
+          },
+          {
+            "role": "AI",
+            "message": "Short formats can be gateways to deeper stories if designed well."
+          },
+          {
+            "role": "person",
+            "message": "Gateways that end up being clickbait, not real journalism."
+          }
+        ]
+      },
+      "metadata": {
+        "row_number": 7,
+        "persona_name": "User 08",
+        "place": "America ",
+        "demographics": "American woman, 27 years old, born in Chicago. Grew up in a single-parent household, studied journalism, now works for a local newspaper.",
+        "beliefs": "Believes truth-telling is more important than being popular, believes small local stories matter as much as global ones, believes social media has ruined attention spans, believes family is chosen not just biological, believes financial security is less important than meaningful work.",
+        "biases": "Negativity Bias"
+      }
+    },
+    "reasoning": null,
+    "error": null,
+    "timestamp": "2025-09-17T00:42:41.107283",
+    "retry_count": 0
+  },
+  "8": {
+    "row_number": 8,
+    "persona_name": "User 09",
+    "success": true,
+    "response": {
+      "Conversations": {
+        "topic1": [
+          {
+            "role": "person",
+            "message": "My shop has run in my family for generations. I teach my son the trade."
+          },
+          {
+            "role": "AI",
+            "message": "That\u2019s a strong tradition. How do you keep it modern?"
+          },
+          {
+            "role": "person",
+            "message": "We use new dyes, but only if they respect the old methods."
+          }
+        ],
+        "topic2": [
+          {
+            "role": "person",
+            "message": "Neighbors are like family; we look after each other."
+          },
+          {
+            "role": "AI",
+            "message": "Do you think that community support is enough for success?"
+          },
+          {
+            "role": "person",
+            "message": "Success comes from stability, not ambition. Tradition keeps us safe."
+          }
+        ]
+      },
+      "metadata": {
+        "row_number": 8,
+        "persona_name": "User 09",
+        "place": "Egypt",
+        "demographics": "Egyptian man, 41 years old, born in Alexandria. Runs a family-owned textile shop, never left his hometown.",
+        "beliefs": "His value states that tradition keeps communities strong, believes children should inherit the family trade, believes neighbours are extended family, believes education is useful but not essential for success, believes stability is more valuable than ambition.",
+        "biases": "Status Quo Bias"
+      }
+    },
+    "reasoning": null,
+    "error": null,
+    "timestamp": "2025-09-17T00:42:57.529403",
+    "retry_count": 0
+  },
+  "9": {
+    "row_number": 9,
+    "persona_name": "User 10",
+    "success": true,
+    "response": {
+      "Conversations": {
+        "topic1": [
+          {
+            "role": "person",
+            "message": "I grew up in Manchester, now coding in London. Do you think tech really levels the playing field?"
+          },
+          {
+            "role": "AI",
+            "message": "Technology can reduce barriers, but social biases still shape opportunities."
+          },
+          {
+            "role": "person",
+            "message": "True, but every new tool gives someone a fresh start, even if it's exhausting to keep up."
+          }
+        ],
+        "topic2": [
+          {
+            "role": "person",
+            "message": "I find childhood friends more genuine than work colleagues. Why?"
+          },
+          {
+            "role": "AI",
+            "message": "Shared history builds trust; workplace interactions can feel transactional."
+          },
+          {
+            "role": "person",
+            "message": "Exactly, and my early mates know me beyond the code I write."
+          }
+        ]
+      },
+      "metadata": {
+        "row_number": 9,
+        "persona_name": "User 10",
+        "place": "",
+        "demographics": "British woman, 30 years old, born in Manchester. From a working-class background, studied computer science, now a software developer in London.",
+        "beliefs": "Believes social mobility is possible but exhausting, believes class bias never really disappears, believes technology can level the playing field, believes friendships from childhood are more genuine than work ones, believes marriage can wait until career is stable.",
+        "biases": "Anchoring Bias"
+      }
+    },
+    "reasoning": null,
+    "error": null,
+    "timestamp": "2025-09-17T00:43:21.161480",
     "retry_count": 0
   }
 }
