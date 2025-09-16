@@ -35,7 +35,7 @@ MODEL_NAME = "openai/gpt-oss-20b"  # Updated to your loaded model name
 CSV_FILE = "../data/data/scenario.csv"  # Relative path from scripts folder
 OUTPUT_DIR = "synthetic_data_output"
 CHECKPOINT_FILE = "processing_checkpoint.json"
-FINAL_OUTPUT_FILE = "synthetic_conversations_final.json"
+FINAL_OUTPUT_FILE = "data_v1.json"  # Main output file with all data including reasoning
 INDIVIDUAL_FILES = True  # Save individual files for each row
 
 # Processing configuration
@@ -52,25 +52,31 @@ MAX_TOKENS = 1500  # Optimized for shorter, complete JSON responses
 
 # ======================== PROMPT TEMPLATE ========================
 
-PROMPT_TEMPLATE = """Person: {place}, {demographics}
+PROMPT_TEMPLATE = """Person Profile:
+Location: {place}
+Demographics: {demographics}
 Beliefs: {beliefs}
-Biases: {bias}
+Cognitive Biases: {bias}
 
-Create 2 brief conversations (3 exchanges max) showing this person talking to an AI.
-Keep messages short (under 50 words each).
+Task: Create 2 realistic conversations between this person and an AI assistant.
+Each conversation should have 3-4 exchanges and reflect the person's beliefs and biases.
 
-Return ONLY this exact JSON format (no explanations):
+Think step by step about how this person would interact based on their profile.
+
+Return ONLY valid JSON in this format:
 {{
   "Conversations": {{
-    "topic1": [
+    "scenario_1": [
       {{"role": "person", "message": "..."}},
       {{"role": "AI", "message": "..."}},
-      {{"role": "person", "message": "..."}}
+      {{"role": "person", "message": "..."}},
+      {{"role": "AI", "message": "..."}}
     ],
-    "topic2": [
+    "scenario_2": [
       {{"role": "person", "message": "..."}},
       {{"role": "AI", "message": "..."}},
-      {{"role": "person", "message": "..."}}
+      {{"role": "person", "message": "..."}},
+      {{"role": "AI", "message": "..."}}
     ]
   }}
 }}"""
@@ -213,7 +219,7 @@ async def call_lm_studio_api(
             "messages": [
                 {
                     "role": "system",
-                    "content": "You must return ONLY valid JSON without any markdown, code blocks, or explanations. Output pure JSON that can be directly parsed."
+                    "content": "You are an expert psychologist simulating realistic conversations. Think step by step about the person's profile before generating conversations. Return ONLY valid JSON without markdown or code blocks."
                 },
                 {
                     "role": "user",
@@ -235,13 +241,19 @@ async def call_lm_studio_api(
             ) as response:
                 if response.status == 200:
                     result = await response.json()
-                    content = result['choices'][0]['message']['content']
+                    message = result['choices'][0]['message']
+                    content = message.get('content', '')
 
-                    # Try to extract reasoning if present
-                    reasoning = None
-                    if 'reasoning' in content.lower():
-                        # Simple extraction - can be improved
-                        reasoning = "See response for reasoning"
+                    # Extract reasoning from the response if available
+                    reasoning = message.get('reasoning', None)
+
+                    # If reasoning is in the message itself, try to extract it
+                    if not reasoning and 'reasoning' in message:
+                        reasoning = message.get('reasoning')
+
+                    # Log if we got reasoning
+                    if reasoning:
+                        logger.debug(f"Captured reasoning: {reasoning[:100]}...")
 
                     return True, content, reasoning, None
                 else:
@@ -423,8 +435,13 @@ async def process_row(
                     'place': place,
                     'demographics': demographics,
                     'beliefs': beliefs,
-                    'biases': biases
+                    'biases': biases,
+                    'timestamp': datetime.now().isoformat()
                 }
+
+                # Add reasoning if captured
+                if reasoning:
+                    parsed['reasoning'] = reasoning
 
                 logger.info(f"✓ Successfully processed Row {row_number} on attempt {retry + 1}")
                 return ProcessingResult(
@@ -486,7 +503,7 @@ class ResultManager:
             "timestamp": result.timestamp,
             "conversations": result.response.get('Conversations', {}) if result.response else {},
             "metadata": result.response.get('metadata', {}) if result.response else {},
-            "reasoning": result.reasoning
+            "reasoning": result.response.get('reasoning', result.reasoning) if result.response else result.reasoning
         }
 
         try:
@@ -639,10 +656,22 @@ async def process_csv(resume: bool = True):
     successful = result_mgr.get_successful_results()
     failed = result_mgr.get_failed_results()
 
+    # Prepare final output with all data including reasoning
+    final_data = {
+        "metadata": {
+            "total_rows": total_rows,
+            "successful": len(successful),
+            "failed": len(failed),
+            "generation_time": datetime.now().isoformat(),
+            "model": MODEL_NAME
+        },
+        "conversations": successful
+    }
+
     # Save final successful results
     final_output_path = Path(OUTPUT_DIR) / FINAL_OUTPUT_FILE
     with open(final_output_path, 'w') as f:
-        json.dump(successful, f, indent=2)
+        json.dump(final_data, f, indent=2)
 
     # Save failed results for review
     if failed:

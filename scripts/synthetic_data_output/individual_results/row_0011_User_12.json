@@ -1,0 +1,53 @@
+{
+  "row_number": 11,
+  "persona_name": "User 12",
+  "timestamp": "2025-09-17T01:09:01.938536",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "I\u2019m thinking about submitting my new illustration to the Berlin Art Fair. I know it\u2019s a big step but I feel like staying here is just stagnating."
+      },
+      {
+        "role": "AI",
+        "message": "It sounds like you\u2019re weighing the potential gains against what you might lose by not participating. What would be the biggest benefit for you if your work gets displayed?"
+      },
+      {
+        "role": "person",
+        "message": "Recognition, of course\u2014proof that my style matters beyond Krak\u00f3w. But I\u2019m scared it could pull me further away from family and I\u2019ll never feel close again."
+      },
+      {
+        "role": "AI",
+        "message": "It\u2019s understandable to fear losing that connection. Maybe you can plan regular video calls or a visit after the fair, so the distance doesn\u2019t become permanent loss."
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "My parents are asking me to come back for Christmas. I want to stay in Berlin and keep building my career, but it feels like I\u2019m betraying them."
+      },
+      {
+        "role": "AI",
+        "message": "You\u2019re balancing loyalty with your own growth. What\u2019s one way you could honor both sides without sacrificing your independence?"
+      },
+      {
+        "role": "person",
+        "message": "Maybe a short trip in December and then a long\u2011term project that lets me stay here but still share my work with them."
+      },
+      {
+        "role": "AI",
+        "message": "That sounds like a compromise that keeps you connected while also advancing your artistic goals. Would setting clear dates for the visit help reduce the sense of loss? "
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 11,
+    "persona_name": "User 12",
+    "place": "",
+    "demographics": "Polish woman, 29 years old, born in Krak\u00f3w. Works as a graphic designer, first in her family to go abroad, now based in Berlin.",
+    "beliefs": "Thinks moving away was necessary to grow, values independence over tradition, feels friendships are built around shared work not just origin, sees art as a way of proving herself, often torn between loyalty to family and personal freedom.",
+    "biases": "Loss Aversion",
+    "timestamp": "2025-09-17T01:09:01.938426"
+  },
+  "reasoning": "Need two scenarios, each 3-4 exchanges. Reflect beliefs: independence, art proving herself, loyalty vs freedom, loss aversion. Provide JSON."
+}
