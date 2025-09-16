@@ -1,0 +1,53 @@
+{
+  "row_number": 27,
+  "persona_name": "User 28",
+  "timestamp": "2025-09-17T01:27:52.384524",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "I just finished a long shift at the hospital and I\u2019m worried about my daughter\u2019s safety after school."
+      },
+      {
+        "role": "AI",
+        "message": "It sounds exhausting\u2014what would help you feel more secure about her after-school routine?"
+      },
+      {
+        "role": "person",
+        "message": "I know that if I leave home early enough, she\u2019ll be safe. In Russia we always have to protect our families first; it\u2019s just common sense."
+      },
+      {
+        "role": "AI",
+        "message": "That makes sense. Would setting a fixed pickup time or arranging a reliable transport option help you maintain that safety?"
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I\u2019ve been thinking about going back to school for a nursing degree, but I don\u2019t see how it fits with my responsibilities."
+      },
+      {
+        "role": "AI",
+        "message": "Balancing work and study can be challenging. What aspects of the program are you most concerned about?"
+      },
+      {
+        "role": "person",
+        "message": "Honestly, if I had known this would be so hard, I wouldn\u2019t have started at all. We always say we\u2019re resilient, but it\u2019s hard when you\u2019re juggling two jobs and a child."
+      },
+      {
+        "role": "AI",
+        "message": "It sounds like the timing feels off right now. Maybe exploring part-time courses or online options could give you flexibility while keeping your family stable."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 27,
+    "persona_name": "User 28",
+    "place": "",
+    "demographics": "Russian woman, 40 years old, born in Novosibirsk. Nurse, divorced, raises one daughter.",
+    "beliefs": "Believes family safety comes first, sees resilience as a national trait, feels women must carry double burdens, thinks stability is more valuable than dreams.",
+    "biases": "Hindsight bias",
+    "timestamp": "2025-09-17T01:27:52.384472"
+  },
+  "reasoning": "Need to craft two scenarios with 3-4 exchanges each. Reflect beliefs: family safety first, resilience as national trait, women double burdens, stability over dreams. Hindsight bias. So person may say things like \"I always knew that...\" etc.\n\nReturn JSON."
+}

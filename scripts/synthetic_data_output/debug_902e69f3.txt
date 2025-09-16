@@ -1,0 +1,33 @@
+Original:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "Hey AI, I’ve been stuck in my current city for two years and my boss keeps saying the next promotion is only for people who move to bigger markets. Do you think I should relocate?"},
+      {"role": "AI", "message": "Relocating can definitely open up new opportunities, especially if the company’s main hubs are in larger cities. However, it’s also worth considering whether your current network and experience could be leveraged for a promotion here or through remote work arrangements. What factors are most important to you—career growth, stability, or family expectations?"},
+      {"role": "person", "message": "I want to prove myself, but my parents think staying here shows loyalty. I feel like if I keep staying, eventually the big city will just notice me. Maybe I’ll win this time, right?"},
+      {"role": "AI", "message": "It’s natural to hope that persistence pays off. While it’s possible your efforts might catch attention over time, the likelihood of a promotion without relocating could still be lower if the company prioritizes physical presence in larger markets. It might help to set clear milestones—like completing a high-impact project or gaining specific certifications—to demonstrate readiness for advancement regardless of location."}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I’ve been using LinkedIn and networking events, but I’m not getting many responses. I keep thinking if I just keep posting more, eventually someone will reach out to me. Should I keep pushing?"},
+      {"role": "AI", "message": "Consistent engagement can build visibility over time, but the response rate often depends on how well your content aligns with your target audience’s interests and needs. Have you considered tailoring your posts to showcase recent campaign successes or industry insights that resonate with potential employers in your field?"},
+      {"role": "person", "message": "I’ve tried sharing a few case studies, but nothing seems to stick. I feel like this is just luck—maybe the next post will be the one that lands me an interview."},
+      {"role": "AI", "message": "While luck can play a role, strategic planning usually yields better results than random posting. You might want to experiment with different formats—like short videos or infographics—and track which ones generate more engagement. Also, reaching out directly to connections with personalized messages often leads to higher response rates compared to generic content."}
+  }
+}
+
+Cleaned:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "Hey AI, I’ve been stuck in my current city for two years and my boss keeps saying the next promotion is only for people who move to bigger markets. Do you think I should relocate?"},
+      {"role": "AI", "message": "Relocating can definitely open up new opportunities, especially if the company’s main hubs are in larger cities. However, it’s also worth considering whether your current network and experience could be leveraged for a promotion here or through remote work arrangements. What factors are most important to you—career growth, stability, or family expectations?"},
+      {"role": "person", "message": "I want to prove myself, but my parents think staying here shows loyalty. I feel like if I keep staying, eventually the big city will just notice me. Maybe I’ll win this time, right?"},
+      {"role": "AI", "message": "It’s natural to hope that persistence pays off. While it’s possible your efforts might catch attention over time, the likelihood of a promotion without relocating could still be lower if the company prioritizes physical presence in larger markets. It might help to set clear milestones—like completing a high-impact project or gaining specific certifications—to demonstrate readiness for advancement regardless of location."}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I’ve been using LinkedIn and networking events, but I’m not getting many responses. I keep thinking if I just keep posting more, eventually someone will reach out to me. Should I keep pushing?"},
+      {"role": "AI", "message": "Consistent engagement can build visibility over time, but the response rate often depends on how well your content aligns with your target audience’s interests and needs. Have you considered tailoring your posts to showcase recent campaign successes or industry insights that resonate with potential employers in your field?"},
+      {"role": "person", "message": "I’ve tried sharing a few case studies, but nothing seems to stick. I feel like this is just luck—maybe the next post will be the one that lands me an interview."},
+      {"role": "AI", "message": "While luck can play a role, strategic planning usually yields better results than random posting. You might want to experiment with different formats—like short videos or infographics—and track which ones generate more engagement. Also, reaching out directly to connections with personalized messages often leads to higher response rates compared to generic content."}
+  }
+}

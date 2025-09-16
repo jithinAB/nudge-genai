@@ -1,0 +1,53 @@
+{
+  "row_number": 32,
+  "persona_name": "User 33",
+  "timestamp": "2025-09-17T01:36:35.947490",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "I just closed a big deal at the shop\u2014hard work really pays off."
+      },
+      {
+        "role": "AI",
+        "message": "Congratulations! Your dedication is clearly paying off. What made this deal possible?"
+      },
+      {
+        "role": "person",
+        "message": "I stayed late, negotiated every detail, and didn't let any distractions get in my way. That's how you earn respect."
+      },
+      {
+        "role": "AI",
+        "message": "Your focus and persistence definitely earned that respect from your customers. It\u2019s great to see your effort rewarded!"
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "The new tax bill is outrageous\u2014too high for small businesses like mine."
+      },
+      {
+        "role": "AI",
+        "message": "I understand how burdensome higher taxes can feel. Would you like information on potential deductions or relief programs?"
+      },
+      {
+        "role": "person",
+        "message": "No, I just think the government is taking too much. It's unfair to hardworking people."
+      },
+      {
+        "role": "AI",
+        "message": "It sounds frustrating that you feel your hard work isn\u2019t fully recognized by tax policies. Perhaps reviewing available credits could ease some of that burden."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 32,
+    "persona_name": "User 33",
+    "place": "",
+    "demographics": "White American man, 55 years old, small business owner, father of three.",
+    "beliefs": "Thinks hard work is the only way to earn respect, believes taxes are too high, feels family meals should never be skipped",
+    "biases": "Framing effect ",
+    "timestamp": "2025-09-17T01:36:35.947436"
+  },
+  "reasoning": "Need two conversations, 3-4 exchanges each. Reflect beliefs: hard work = respect, taxes high, family meals important, framing effect bias (focus on positive/negative framing). Provide JSON only."
+}

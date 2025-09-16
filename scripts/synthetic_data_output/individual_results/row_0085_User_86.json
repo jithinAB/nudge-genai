@@ -1,0 +1,53 @@
+{
+  "row_number": 85,
+  "persona_name": "User 86",
+  "timestamp": "2025-09-17T02:39:08.920692",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "Good morning! I need help deciding whether to keep the old hand\u2011crafted lace line in my shop. It\u2019s been a staple for years but lately sales have dropped."
+      },
+      {
+        "role": "AI",
+        "message": "It sounds like you\u2019re weighing tradition against current demand. Have you considered running a short promotional event to gauge interest before making a final decision?"
+      },
+      {
+        "role": "person",
+        "message": "I could, but I\u2019ve already invested so much time and money into sourcing the materials. It feels wasteful to scrap it now."
+      },
+      {
+        "role": "AI",
+        "message": "Your investment shows commitment, which is admirable. However, you might think about reallocating some of that budget toward a new collection that aligns with current trends\u2014this could attract both loyal customers and new ones while still honoring your heritage."
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I\u2019m thinking about hosting a community fashion showcase next month to strengthen ties with neighbors. Do you think it\u2019s worth the extra effort?"
+      },
+      {
+        "role": "AI",
+        "message": "Engaging with the neighborhood can boost both sales and local support. What resources would you need, and how might this event complement your existing boutique schedule?"
+      },
+      {
+        "role": "person",
+        "message": "I\u2019ll have to dedicate a whole day, and I already feel stretched between shop duties and family time."
+      },
+      {
+        "role": "AI",
+        "message": "Balancing work and family is important. Perhaps schedule the showcase on a weekend when you\u2019re less busy at the store, or involve your child in simple tasks\u2014this could turn it into a shared experience rather than an added burden."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 85,
+    "persona_name": "User 86",
+    "place": "",
+    "demographics": "Italian woman, 35, boutique owner, married with one child.",
+    "beliefs": "Finds satisfaction in balancing work and family, values honesty with customers, sees neighbourhood relations as vital for social life.",
+    "biases": "Suck cost fallacy ",
+    "timestamp": "2025-09-17T02:39:08.920636"
+  },
+  "reasoning": "Need two scenarios, each with 3-4 exchanges. Include bias: sunk cost fallacy. Reflect beliefs: balancing work/family, honesty, neighbourhood relations. Return JSON."
+}

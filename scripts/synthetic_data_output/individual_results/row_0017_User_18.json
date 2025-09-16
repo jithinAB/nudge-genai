@@ -1,0 +1,53 @@
+{
+  "row_number": 17,
+  "persona_name": "User 18",
+  "timestamp": "2025-09-17T01:15:35.827353",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "Good morning, I need to decide whether to accept the new project proposal at work. It promises higher pay but also longer hours and more risk."
+      },
+      {
+        "role": "AI",
+        "message": "It sounds like you\u2019re weighing the benefits against potential drawbacks. What are the main concerns that make you hesitant?"
+      },
+      {
+        "role": "person",
+        "message": "If I take it, I\u2019ll have to stay late every night for a month, which means I won\u2019t be able to visit my parents as often. They\u2019re getting older and I feel responsible for them."
+      },
+      {
+        "role": "AI",
+        "message": "Balancing career growth with family responsibilities can be tough. Would you consider negotiating a flexible schedule or a temporary workload reduction instead of fully accepting the proposal?"
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I\u2019m thinking about buying a new house in a quieter suburb, but it\u2019s more expensive than our current place."
+      },
+      {
+        "role": "AI",
+        "message": "What benefits do you see in moving to that suburb? How does it align with your goals for stability and family honor?"
+      },
+      {
+        "role": "person",
+        "message": "It would give my husband and I a safe environment and show our parents we\u2019re doing well. But the higher mortgage could strain our budget."
+      },
+      {
+        "role": "AI",
+        "message": "Since you value steady progress, maybe look into homes that fit within your current financial range or explore a phased renovation plan to avoid large upfront costs."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 17,
+    "persona_name": "User 18",
+    "place": "",
+    "demographics": "Turkish woman, 31 years old, born in Ankara. Works as a civil engineer, recently married.",
+    "beliefs": "Sees her profession as proof women can succeed in male-dominated fields, values stability and steady progress over risk, believes family honour is tied to personal choices, feels responsible to care for her parents as they age, considers a secure home more important than luxury",
+    "biases": "Loss Aversion",
+    "timestamp": "2025-09-17T01:15:35.827290"
+  },
+  "reasoning": "Need two conversations. Reflect loss aversion, values stability, family honor. Provide realistic exchanges."
+}

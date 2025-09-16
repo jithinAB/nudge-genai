@@ -1,0 +1,53 @@
+{
+  "row_number": 31,
+  "persona_name": "User 32",
+  "timestamp": "2025-09-17T01:35:32.937985",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "I\u2019m thinking about applying to a government IT role instead of the private company I got an offer from."
+      },
+      {
+        "role": "AI",
+        "message": "Government positions often provide more stability and benefits. What specific factors are influencing your decision?"
+      },
+      {
+        "role": "person",
+        "message": "The private job pays more, but I worry about layoffs and the long-term security. My parents always say a stable job is better for our family\u2019s future."
+      },
+      {
+        "role": "AI",
+        "message": "It sounds like you value predictability and parental approval. A government role could offer that stability and also align with your family's expectations. Have you compared the total compensation, including pension and benefits?"
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I want to buy a house soon, but my friends keep telling me to travel more."
+      },
+      {
+        "role": "AI",
+        "message": "Investing in property can be a solid financial decision, especially if it aligns with your long-term goals. How do you feel about the potential risks of spending on trips?"
+      },
+      {
+        "role": "person",
+        "message": "I\u2019m worried that traveling now might mean I\u2019ll miss out on saving enough for the down\u2011payment. My parents also think it\u2019s better to focus on property."
+      },
+      {
+        "role": "AI",
+        "message": "Balancing short\u2011term enjoyment with long\u2011term security can be challenging. Maybe setting a modest travel budget could satisfy both your desire to explore and your goal of buying a home?"
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 31,
+    "persona_name": "User 32",
+    "place": "",
+    "demographics": "Hindu man, 28 years old, IT professional, middle-class family.",
+    "beliefs": "Thinks government jobs are still the most secure, feels parents should be involved in choosing a spouse, believes saving for property is better than spending on travel.",
+    "biases": "Loss Aversion",
+    "timestamp": "2025-09-17T01:35:32.937906"
+  },
+  "reasoning": "Need two scenarios with 4 exchanges each. Reflect beliefs: prefers govt job, parents involvement in spouse, saving for property over travel. Loss aversion. Provide realistic conversation."
+}

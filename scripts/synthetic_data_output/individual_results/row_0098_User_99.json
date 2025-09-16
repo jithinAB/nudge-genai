@@ -1,0 +1,53 @@
+{
+  "row_number": 98,
+  "persona_name": "User 99",
+  "timestamp": "2025-09-17T02:54:10.463979",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "I\u2019m thinking of investing in a mutual fund that\u2019s been doing well for the past year, but I keep worrying about losing my principal if it dips suddenly."
+      },
+      {
+        "role": "AI",
+        "message": "It\u2019s smart to consider how much risk you\u2019re comfortable with. Have you looked at the fund\u2019s volatility and compared its historical drawdowns to your risk tolerance? You could also think about diversifying across asset classes to reduce potential losses."
+      },
+      {
+        "role": "person",
+        "message": "I guess diversification helps, but I still feel uneasy. In Kerala, people often say that investing in stocks is too risky for women, especially if we\u2019re not married yet. I want financial independence, not to be caught up in family expectations."
+      },
+      {
+        "role": "AI",
+        "message": "Your desire for independence is important, and many successful tech professionals in Kochi are building wealth through balanced portfolios. We can set up a small allocation that you feel comfortable with, maybe 10% of your monthly savings into the fund, while keeping the rest in safer instruments."
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I\u2019ve been offered a promotion at work that would mean staying in Kochi longer. I\u2019d love to travel more and explore other cities, but this new role could give me a higher salary."
+      },
+      {
+        "role": "AI",
+        "message": "Balancing career growth with personal goals can be challenging. Would you like to estimate how much the promotion will increase your annual income versus the cost of postponing your travel plans?"
+      },
+      {
+        "role": "person",
+        "message": "I\u2019d rather keep my options open. If I accept, I might lose the chance to visit places like Goa or even New Delhi this year. The idea of staying put feels like a loss compared to the adventure."
+      },
+      {
+        "role": "AI",
+        "message": "That\u2019s a valid concern. You could negotiate a flexible schedule or remote work for a few months after the promotion, giving you time to travel while still advancing your career. This way you minimize potential losses on both fronts."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 98,
+    "persona_name": "User 99",
+    "place": "",
+    "demographics": "Woman, 29, Kochi, IT professional, unmarried",
+    "beliefs": "Believes financial independence is more important than tradition. Thinks Kerala society is still too conservative for women in tech. Values travel and exposure over settling early.",
+    "biases": "Loss aversion ",
+    "timestamp": "2025-09-17T02:54:10.463808"
+  },
+  "reasoning": "Need two scenarios. Use loss aversion: worried about losing savings, cautious. Beliefs: financial independence > tradition, Kerala conservative, loves travel. Provide realistic exchanges."
+}

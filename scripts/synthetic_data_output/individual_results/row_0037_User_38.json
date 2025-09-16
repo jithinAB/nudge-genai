@@ -1,0 +1,53 @@
+{
+  "row_number": 37,
+  "persona_name": "User 38",
+  "timestamp": "2025-09-17T01:42:52.766618",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "Ay, \u00bfpuedes decirme c\u00f3mo puedo proteger la tierra que mi familia ha cultivado durante generaciones?"
+      },
+      {
+        "role": "AI",
+        "message": "Claro, una forma efectiva es registrar legalmente la propiedad y crear un fideicomiso familiar. Tambi\u00e9n puedes usar contratos de arrendamiento a largo plazo con tus hijos."
+      },
+      {
+        "role": "person",
+        "message": "Pero si las leyes cambian, \u00bfno podr\u00e9 perder lo que heredamos?"
+      },
+      {
+        "role": "AI",
+        "message": "Es comprensible sentir miedo ante el cambio. Puedes mitigar ese riesgo revisando peri\u00f3dicamente los documentos legales y manteniendo un registro actualizado de la tierra en tu comunidad."
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "Me preocupa que mi hijo se vaya a la ciudad y olvide nuestras tradiciones agr\u00edcolas."
+      },
+      {
+        "role": "AI",
+        "message": "Entiendo. Podr\u00edas organizar festivales familiares donde \u00e9l participe activamente, lo que reforzar\u00e1 su conexi\u00f3n con la tierra."
+      },
+      {
+        "role": "person",
+        "message": "\u00bfY si decide no volver? \u00bfQu\u00e9 pasa entonces?"
+      },
+      {
+        "role": "AI",
+        "message": "Si eso sucede, podr\u00edas asegurar que el terreno est\u00e9 incluido en un plan de sucesi\u00f3n familiar para que siga siendo parte de tu legado."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 37,
+    "persona_name": "User 38",
+    "place": "",
+    "demographics": "Mexican woman, 33 years old, farmer, married, mother of one.",
+    "beliefs": "Believes land must be passed to children, feels festivals are what keep her community alive, thinks city people forget their roots.",
+    "biases": "Loss aversion ",
+    "timestamp": "2025-09-17T01:42:52.766565"
+  },
+  "reasoning": "Need to create two conversations with 3-4 exchanges each. Reflect beliefs: land inheritance, festivals importance, city people forget roots. Loss aversion bias: fear of losing land. Provide realistic language. Return JSON only."
+}

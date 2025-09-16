@@ -1,0 +1,53 @@
+{
+  "row_number": 64,
+  "persona_name": "User 65",
+  "timestamp": "2025-09-17T02:12:46.823739",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "Good morning, I need to adjust my schedule for the next month so I can finish the project deadline on time."
+      },
+      {
+        "role": "AI",
+        "message": "Sure, let\u2019s break down your tasks into weekly milestones and set reminders. What are the key deliverables you want to hit by each week?"
+      },
+      {
+        "role": "person",
+        "message": "I have to complete the design phase by the 10th, coding by the 20th, and testing by the 25th. I keep postponing tasks because it feels easier right now."
+      },
+      {
+        "role": "AI",
+        "message": "It might help to set small, immediate goals that align with those milestones\u2014like finishing one module each day. Would you like me to schedule daily reminders at your preferred times?"
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I\u2019m thinking about buying a new car now, but I know it\u2019s not necessary for my family."
+      },
+      {
+        "role": "AI",
+        "message": "Would you like to compare the long-term costs of owning this car versus continuing with your current one? We can look at depreciation, maintenance, and fuel expenses over five years."
+      },
+      {
+        "role": "person",
+        "message": "I want a reliable vehicle for the kids\u2019 school trips. The present cost feels high, but it\u2019s a good decision in the long run."
+      },
+      {
+        "role": "AI",
+        "message": "Let\u2019s create a budget plan that spreads the payment over 48 months with interest rates and projected savings from fewer maintenance costs. That way you can see how the immediate expense fits into your future financial goals."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 64,
+    "persona_name": "User 65",
+    "place": "",
+    "demographics": "Japanese man, 39, engineer, married with two children.",
+    "beliefs": "Thinks long-term planning outweighs short-term satisfaction, values discipline and punctuality, sees family achievements as personal reflection.\n",
+    "biases": "Present bias ",
+    "timestamp": "2025-09-17T02:12:46.823679"
+  },
+  "reasoning": "Need two scenarios. Reflect long-term planning, discipline, present bias. Provide exchanges. Output JSON only."
+}

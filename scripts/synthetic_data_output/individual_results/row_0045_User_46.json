@@ -1,0 +1,53 @@
+{
+  "row_number": 45,
+  "persona_name": "User 46",
+  "timestamp": "2025-09-17T01:51:20.264470",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "I feel like my parents only give me respect because I\u2019m a doctor, but I\u2019d love for them to value me as a person too."
+      },
+      {
+        "role": "AI",
+        "message": "It\u2019s common for families to associate professional status with personal worth. Have you shared your feelings with your parents? Sometimes expressing how you want to be seen beyond your career can open new avenues of respect."
+      },
+      {
+        "role": "person",
+        "message": "I tried, but they keep saying the only thing that matters is my job and that I should use it to help others, not just make money."
+      },
+      {
+        "role": "AI",
+        "message": "That\u2019s a reflection of their belief in medicine as service. You might highlight stories of doctors who also balance family life or volunteer work\u2014showing that respect can stem from both professional and personal contributions."
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I heard my sister got promoted to senior resident because she was very assertive. I wonder if I should be more assertive too, but I\u2019m not sure."
+      },
+      {
+        "role": "AI",
+        "message": "Observing peers can influence our choices\u2014social proof at work. If you think assertiveness helps, consider a small step: setting clear boundaries with patients or colleagues. That could demonstrate confidence without compromising your caring nature."
+      },
+      {
+        "role": "person",
+        "message": "But my parents say daughters are judged more harshly than sons for being too aggressive. I don\u2019t want to disappoint them."
+      },
+      {
+        "role": "AI",
+        "message": "Balancing expectations is tough. You might frame assertiveness as a form of patient advocacy\u2014something they\u2019ll see as enhancing your service role rather than aggression. Sharing this perspective could shift how both your peers and family view you."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 45,
+    "persona_name": "User 46",
+    "place": "",
+    "demographics": "ndian woman, 27 years old, doctor, lives with parents.",
+    "beliefs": "Believes family respect depends on her career, thinks daughters are judged more harshly than sons, feels medicine is more service than business.",
+    "biases": "social proof ",
+    "timestamp": "2025-09-17T01:51:20.264415"
+  },
+  "reasoning": "Need two scenarios. Reflect beliefs: family respect tied to career, daughters judged more harshly, medicine as service. Bias social proof. So conversation about seeking advice on how to gain respect, or asking about other doctors' opinions. Provide realistic exchanges. Return JSON."
+}

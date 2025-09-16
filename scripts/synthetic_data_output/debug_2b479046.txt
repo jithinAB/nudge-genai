@@ -1,0 +1,35 @@
+Original:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "I’m worried the new supplier cut back on the tomatoes this season. We’ll be short for a week and I don’t want to disappoint our regulars."},
+      {"role": "AI", "message": "It sounds like you’re facing a tight spot with inventory. Would you like some ideas on how to communicate this transparently to your staff or suggestions for alternative dishes that use what you have?"},
+      {"role": "person", "message": "I’ll tell the team straight up—no sugarcoating. They need to know we’re short so they can plan accordingly. Also, maybe I should offer them a small bonus if they pull extra hours this week."},
+      {"role": "AI", "message": "Honesty will keep trust high, and a bonus could boost morale during the crunch. I can draft an email template for you that explains the situation, outlines the temporary menu changes, and includes the incentive details."
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I’m thinking of adding a new pasta dish, but I'm not sure if we have enough fresh basil to keep it consistent."},
+      {"role": "AI", "message": "If basil availability is uncertain, you might consider sourcing dried basil or using an alternative herb that’s more reliable. Would you like help comparing the flavor profiles and costs?"},
+      {"role": "person", "message": "I’ll stick with fresh if we can, but I’ll prepare a backup plan in case it runs out. I don’t want to promise something we can’t deliver."},
+      {"role": "AI", "message": "That’s a solid approach. I can help you create a contingency schedule and suggest how to inform customers about the potential change without undermining confidence."
+    ]
+  }
+}
+
+Cleaned:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "I’m worried the new supplier cut back on the tomatoes this season. We’ll be short for a week and I don’t want to disappoint our regulars."},
+      {"role": "AI", "message": "It sounds like you’re facing a tight spot with inventory. Would you like some ideas on how to communicate this transparently to your staff or suggestions for alternative dishes that use what you have?"},
+      {"role": "person", "message": "I’ll tell the team straight up—no sugarcoating. They need to know we’re short so they can plan accordingly. Also, maybe I should offer them a small bonus if they pull extra hours this week."},
+      {"role": "AI", "message": "Honesty will keep trust high, and a bonus could boost morale during the crunch. I can draft an email template for you that explains the situation, outlines the temporary menu changes, and includes the incentive details."
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I’m thinking of adding a new pasta dish, but I'm not sure if we have enough fresh basil to keep it consistent."},
+      {"role": "AI", "message": "If basil availability is uncertain, you might consider sourcing dried basil or using an alternative herb that’s more reliable. Would you like help comparing the flavor profiles and costs?"},
+      {"role": "person", "message": "I’ll stick with fresh if we can, but I’ll prepare a backup plan in case it runs out. I don’t want to promise something we can’t deliver."},
+      {"role": "AI", "message": "That’s a solid approach. I can help you create a contingency schedule and suggest how to inform customers about the potential change without undermining confidence."
+    ]
+  }
+}

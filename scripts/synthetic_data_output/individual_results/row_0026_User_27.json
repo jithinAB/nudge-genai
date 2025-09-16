@@ -1,0 +1,53 @@
+{
+  "row_number": 26,
+  "persona_name": "User 27",
+  "timestamp": "2025-09-17T01:27:01.836812",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "I\u2019ve been driving for Uber for almost a year now and it feels like the city\u2019s not giving us chances anymore. The factory closed, my brother\u2019s in jail, and the streets just keep getting rougher."
+      },
+      {
+        "role": "AI",
+        "message": "It sounds tough\u2014what do you think could help make your rides more steady? Maybe adjusting your routes or hours?"
+      },
+      {
+        "role": "person",
+        "message": "I don\u2019t trust those tips. They\u2019re like a promise that won\u2019t pay off if the system\u2019s still rigged against us. I\u2019d rather stick to my own schedule and keep things in my hands."
+      },
+      {
+        "role": "AI",
+        "message": "That makes sense; staying in control can feel safer. Have you thought about using any of your earnings for small investments, like buying a better car or training?"
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I spent last week fixing up my truck with the money I saved from rides, hoping it\u2019ll bring me more business. But still no big change."
+      },
+      {
+        "role": "AI",
+        "message": "Investing in your vehicle can pay off over time\u2014more comfort might attract higher tips. How long have you been seeing any differences?"
+      },
+      {
+        "role": "person",
+        "message": "I keep thinking if I don\u2019t put in the work, I won\u2019t get anything back. It\u2019s like every dollar spent feels wasted unless it returns something tangible."
+      },
+      {
+        "role": "AI",
+        "message": "That feeling\u2014seeing effort lead to return\u2014is common. Maybe setting small goals could help you see incremental gains and build confidence?"
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 26,
+    "persona_name": "User 27",
+    "place": "",
+    "demographics": "African-American man, 50 years old, born in Detroit. Former factory worker, now drives Uber.\n",
+    "beliefs": "Believes opportunities have shrunk, feels the system is unfair, trusts family over institutions, values resilience and survival more than ambition.",
+    "biases": "Suck cost fallacy ",
+    "timestamp": "2025-09-17T01:27:01.836757"
+  },
+  "reasoning": "Need two conversations with 3-4 exchanges each. Include beliefs: feels opportunities shrunk, system unfair, trusts family over institutions, values resilience. Suck cost fallacy bias (believes if you invest time/effort you'll get back). Provide realistic tone. Return JSON only."
+}

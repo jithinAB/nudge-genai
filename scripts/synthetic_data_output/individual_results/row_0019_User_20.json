@@ -1,0 +1,53 @@
+{
+  "row_number": 19,
+  "persona_name": "User 20",
+  "timestamp": "2025-09-17T01:18:09.630037",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "Bonjour! I\u2019m planning a new tour route through the old medina, but I\u2019m not sure if it\u2019s worth adding the less-known souks that tourists rarely visit."
+      },
+      {
+        "role": "AI",
+        "message": "It could be a unique experience for guests, offering them an authentic glimpse of local life. What concerns you about including those areas?"
+      },
+      {
+        "role": "person",
+        "message": "I worry we\u2019ll lose our usual revenue, and I\u2019m not sure if the locals will welcome us there. My family depends on my income."
+      },
+      {
+        "role": "AI",
+        "message": "You could start with a small group to gauge interest, then adjust based on feedback. Highlighting the cultural heritage might also attract visitors who value authenticity over mainstream attractions."
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I\u2019ve been thinking about opening a small caf\u00e9 near the kasbah, but I\u2019m hesitant because it would mean spending more money than I earn from tours."
+      },
+      {
+        "role": "AI",
+        "message": "A caf\u00e9 could complement your tours and showcase Moroccan hospitality. Have you considered using some of the items you already own to minimize costs?"
+      },
+      {
+        "role": "person",
+        "message": "I like that idea, but my mother worries about me investing too much in something that might fail. I feel it's safer to keep my savings for the family."
+      },
+      {
+        "role": "AI",
+        "message": "You could start by repurposing existing kitchen utensils and d\u00e9cor you already own; this way, you preserve your savings while testing the market with a low initial investment."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 19,
+    "persona_name": "User 20",
+    "place": "",
+    "demographics": "Moroccan woman, 26 years old, born in Marrakesh. Works as a tour guide, supports her younger siblings.",
+    "beliefs": "Thinks heritage is Morocco\u2019s strongest asset, values hospitality above money, believes tourism brings dignity, feels family duty comes before personal dreams",
+    "biases": "Endowment effect ",
+    "timestamp": "2025-09-17T01:18:09.629946"
+  },
+  "reasoning": "We need two conversations, each 3-4 exchanges. Reflect beliefs: heritage strong, hospitality over money, tourism dignity, family duty before personal dreams, endowment effect bias (overvalue own possessions). Provide realistic. Return JSON."
+}

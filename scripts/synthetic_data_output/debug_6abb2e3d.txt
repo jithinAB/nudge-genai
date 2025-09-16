@@ -1,0 +1,35 @@
+Original:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "I’m thinking about taking a sabbatical to travel in Europe, but I’m worried about losing my current salary and the stability of my IT job."},
+      {"role": "AI", "message": "It’s understandable to feel hesitant. A sabbatical can be planned so you still receive a portion of your salary or have a savings buffer. What’s the biggest financial risk you’re concerned about?"},
+      {"role": "person", "message": "If I stop working, I’ll lose my monthly income and maybe even my position when I return. Kerala society says I should settle early, but I don’t want to give up on independence."},
+      {"role": "AI", "message": "You could negotiate a part‑time contract or a short-term freelance role that keeps your skillset sharp while you travel. That way you mitigate the loss of income and maintain your career momentum."
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "My friends in Kochi keep telling me I should consider marriage soon, but I feel like I’m missing out on opportunities if I do."},
+      {"role": "AI", "message": "It’s common for people to equate marriage with stability, especially in more traditional settings. How would you define success for yourself right now?"},
+      {"role": "person", "message": "Success means having my own savings, traveling without limits, and not feeling boxed in by expectations."},
+      {"role": "AI", "message": "Focusing on those goals can help you communicate your priorities to others. Setting clear financial milestones might also reassure both you and those who worry about a ‘lost’ future."
+    ]
+  }
+}
+
+Cleaned:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "I’m thinking about taking a sabbatical to travel in Europe, but I’m worried about losing my current salary and the stability of my IT job."},
+      {"role": "AI", "message": "It’s understandable to feel hesitant. A sabbatical can be planned so you still receive a portion of your salary or have a savings buffer. What’s the biggest financial risk you’re concerned about?"},
+      {"role": "person", "message": "If I stop working, I’ll lose my monthly income and maybe even my position when I return. Kerala society says I should settle early, but I don’t want to give up on independence."},
+      {"role": "AI", "message": "You could negotiate a part‑time contract or a short-term freelance role that keeps your skillset sharp while you travel. That way you mitigate the loss of income and maintain your career momentum."
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "My friends in Kochi keep telling me I should consider marriage soon, but I feel like I’m missing out on opportunities if I do."},
+      {"role": "AI", "message": "It’s common for people to equate marriage with stability, especially in more traditional settings. How would you define success for yourself right now?"},
+      {"role": "person", "message": "Success means having my own savings, traveling without limits, and not feeling boxed in by expectations."},
+      {"role": "AI", "message": "Focusing on those goals can help you communicate your priorities to others. Setting clear financial milestones might also reassure both you and those who worry about a ‘lost’ future."
+    ]
+  }
+}

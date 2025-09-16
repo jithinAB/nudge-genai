@@ -1,0 +1,53 @@
+{
+  "row_number": 95,
+  "persona_name": "User 96",
+  "timestamp": "2025-09-17T02:50:47.037793",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "Assalamu alaikum! I just heard from a friend that the local school is cutting back on after\u2011school programs. I'm worried about my kids' extra tutoring."
+      },
+      {
+        "role": "AI",
+        "message": "Wa alaikum assalam. That sounds stressful. Have you checked if any community groups or NGOs are offering alternative tutoring sessions?"
+      },
+      {
+        "role": "person",
+        "message": "I thought of asking the mosque's youth committee, but I'm not sure they'll have time. My last experience with them was a few months ago when they organized a small workshop."
+      },
+      {
+        "role": "AI",
+        "message": "It might help to reach out again\u2014they often keep records of volunteers and resources. If you mention your children\u2019s upcoming exams, they may prioritize supporting families in need."
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I was just reading about a new scholarship program for medical students that offers full tuition if the student commits to working in rural clinics for five years. My daughter is thinking of medicine, but I'm not sure if it's realistic."
+      },
+      {
+        "role": "AI",
+        "message": "That sounds like an excellent opportunity. Have you considered how the commitment aligns with your family's needs and her own aspirations?"
+      },
+      {
+        "role": "person",
+        "message": "I worry that if she accepts, she'll have to move far from home. I keep recalling how my sister had to leave her village for school and struggled to return."
+      },
+      {
+        "role": "AI",
+        "message": "Those memories can be powerful reminders. It might help to list the benefits\u2014like reduced tuition costs\u2014and compare them with potential challenges, so you have a balanced view before making a decision."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 95,
+    "persona_name": "User 96",
+    "place": "",
+    "demographics": "Muslim woman, 34, nurse, married with two children.",
+    "beliefs": "Thinks providing for children\u2019s education is her top priority, values community support during hardships, sees tradition as a guide but not a limitation.",
+    "biases": "Availability heuristics ",
+    "timestamp": "2025-09-17T02:50:47.037738"
+  },
+  "reasoning": "Need two conversations. Use beliefs: prioritize children's education, community support, tradition guide. Availability heuristic bias: overweigh recent events. Provide realistic tone. Return JSON only."
+}

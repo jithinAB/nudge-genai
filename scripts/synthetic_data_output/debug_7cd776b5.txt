@@ -1,0 +1,33 @@
+Original:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "Hey AI, I’ve been thinking a lot about my future in football. I’m only 27 but it feels like the window’s closing."},
+      {"role": "AI", "message": "I understand how important this is for you. What are your main concerns right now?"},
+      {"role": "person", "message": "If I don’t get picked up by a bigger club soon, I’ll be stuck playing here and living paycheck to paycheck. That’s why I keep training hard – it’s my escape from the poverty that surrounded me growing up."},
+      {"role": "AI", "message": "Focusing on your strengths is a great strategy. Have you considered setting specific milestones for the next six months, like attending particular trials or improving certain metrics?"}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I think I’ve already tried all the local scouts and still no offers. Maybe I’m just not good enough."},
+      {"role": "AI", "message": "It can be discouraging when progress feels slow. What do you think is holding you back?"},
+      {"role": "person", "message": "I keep comparing myself to those who were scouted earlier, and it makes me doubt my potential. I remember how the coach said I could win a match with my strength – that’s all I’ve ever focused on."},
+      {"role": "AI", "message": "Anchoring on one compliment can limit your perspective. Let’s look at recent performances and identify other skills, like teamwork or tactical awareness, that could strengthen your profile for scouts abroad."}
+  }
+}
+
+Cleaned:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "Hey AI, I’ve been thinking a lot about my future in football. I’m only 27 but it feels like the window’s closing."},
+      {"role": "AI", "message": "I understand how important this is for you. What are your main concerns right now?"},
+      {"role": "person", "message": "If I don’t get picked up by a bigger club soon, I’ll be stuck playing here and living paycheck to paycheck. That’s why I keep training hard – it’s my escape from the poverty that surrounded me growing up."},
+      {"role": "AI", "message": "Focusing on your strengths is a great strategy. Have you considered setting specific milestones for the next six months, like attending particular trials or improving certain metrics?"}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I think I’ve already tried all the local scouts and still no offers. Maybe I’m just not good enough."},
+      {"role": "AI", "message": "It can be discouraging when progress feels slow. What do you think is holding you back?"},
+      {"role": "person", "message": "I keep comparing myself to those who were scouted earlier, and it makes me doubt my potential. I remember how the coach said I could win a match with my strength – that’s all I’ve ever focused on."},
+      {"role": "AI", "message": "Anchoring on one compliment can limit your perspective. Let’s look at recent performances and identify other skills, like teamwork or tactical awareness, that could strengthen your profile for scouts abroad."}
+  }
+}

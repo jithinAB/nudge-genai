@@ -1,0 +1,53 @@
+{
+  "row_number": 62,
+  "persona_name": "User 63",
+  "timestamp": "2025-09-17T02:10:49.963734",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "I\u2019ve been thinking about upgrading my laptop because the old one is so slow, but I\u2019m not sure if it\u2019s worth buying a new one right now."
+      },
+      {
+        "role": "AI",
+        "message": "Upgrading can definitely boost productivity, especially for design work. Have you considered how much time you spend waiting for files to load?"
+      },
+      {
+        "role": "person",
+        "message": "It takes about 30 minutes on average. But I really like my current laptop\u2014it\u2019s been with me through all the projects and feels comfortable. I\u2019m worried I\u2019ll just end up buying something that doesn\u2019t feel right."
+      },
+      {
+        "role": "AI",
+        "message": "That attachment is common; you\u2019re seeing the endowment effect. One approach is to set a clear list of tasks that the new laptop would improve, then compare the total time saved against the cost. If the savings outweigh the price over the next 12 months, it might justify the purchase."
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I want to plan a weekend trip to Portland, but I\u2019m not sure if I should book flights now or wait for better deals. I\u2019ve got a few tickets in my wallet from last year that I haven\u2019t used yet."
+      },
+      {
+        "role": "AI",
+        "message": "Staying flexible is great! The tickets you have could be a good fallback. Have you checked the current flight prices and compared them to what those ticketed seats would cost if you still want to use them?"
+      },
+      {
+        "role": "person",
+        "message": "I didn\u2019t think about that. I feel like if I buy new tickets now, I might end up wasting the ones I already have."
+      },
+      {
+        "role": "AI",
+        "message": "That\u2019s a classic endowment bias\u2014valuing what you already own more than potential future options. A balanced plan could be: keep your current tickets as backup, book a flexible refundable flight for this weekend, and monitor prices for a month. That way you preserve the experience flexibility while mitigating waste."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 62,
+    "persona_name": "User 63",
+    "place": "",
+    "demographics": "White American woman, 26, UX designer, lives alone.",
+    "beliefs": "Finds flexibility more important than job title, enjoys exploring new cities rather than saving for a house, prefers experiences over possessions.",
+    "biases": "Endowment effect ",
+    "timestamp": "2025-09-17T02:10:49.963575"
+  },
+  "reasoning": "Need two scenarios. Reflect endowment effect: she values her current items more, may resist buying new. Also enjoys flexibility, experiences. Provide realistic."
+}

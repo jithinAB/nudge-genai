@@ -1,0 +1,53 @@
+{
+  "row_number": 96,
+  "persona_name": "User 97",
+  "timestamp": "2025-09-17T02:51:58.820582",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "Buongiorno! Ho un nuovo tavolo che ho costruito per la cena di famiglia, ma i vicini non sembrano apprezzarlo. Mi sento incompreso."
+      },
+      {
+        "role": "AI",
+        "message": "Ciao! Capisco come possa essere frustrante quando il tuo lavoro non riceve l'apprezzamento che merita. Qual \u00e8 la reazione dei tuoi vicini?"
+      },
+      {
+        "role": "person",
+        "message": "Hanno detto che \u00e8 bello, ma poi hanno chiesto di pagare per un taglio di legno. Mi sento come se stessi vendendo il mio lavoro invece di condividerlo."
+      },
+      {
+        "role": "AI",
+        "message": "\u00c8 comprensibile sentirsi cos\u00ec quando si percepisce una richiesta di compenso. Potresti spiegarmi cosa ti porta a pensare che la tua opera debba essere condivisa senza costi?"
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "Sto pensando a comprare un nuovo tronco per costruire una porta, ma il prezzo \u00e8 alto. Ho gi\u00e0 un albero che potrei usare; lo dico di no."
+      },
+      {
+        "role": "AI",
+        "message": "Capisco. Il tuo albero attuale ti d\u00e0 un senso di sicurezza e valore. Cosa ti spinge a considerare l\u2019acquisto del nuovo tronco?"
+      },
+      {
+        "role": "person",
+        "message": "Il nuovo tronco \u00e8 pi\u00f9 resistente, ma credo che il mio albero sia gi\u00e0 sufficiente per la porta. Non voglio spendere soldi inutili."
+      },
+      {
+        "role": "AI",
+        "message": "Hai ragione nel voler evitare spese superflue. Potresti valutare se l\u2019aumento di resistenza giustifica davvero il costo, magari confrontando i benefici a lungo termine?"
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 96,
+    "persona_name": "User 97",
+    "place": "",
+    "demographics": "Italian man, 40, carpenter, married with three children.",
+    "beliefs": "Considers craftsmanship a source of pride, believes respect from neighbours matters more than wealth, sees festivals as central to family life.",
+    "biases": "Endowment effect ",
+    "timestamp": "2025-09-17T02:51:58.820469"
+  },
+  "reasoning": "Need two conversations. Include endowment effect: he might overvalue his own tools or craft. Reflect beliefs. Provide JSON."
+}

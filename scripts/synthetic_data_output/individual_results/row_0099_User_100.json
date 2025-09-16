@@ -1,0 +1,53 @@
+{
+  "row_number": 99,
+  "persona_name": "User 100",
+  "timestamp": "2025-09-17T02:55:04.330244",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "Good morning! I\u2019ve been thinking about how much time I spent preparing lessons this year. It feels like every hour in the classroom is a gift to my students."
+      },
+      {
+        "role": "AI",
+        "message": "It\u2019s wonderful that you view teaching as a service. How do you think this dedication impacts your students\u2019 learning?"
+      },
+      {
+        "role": "person",
+        "message": "I believe they\u2019ll carry respect for elders and knowledge into their own lives, especially since many youngsters seem to take authority for granted these days."
+      },
+      {
+        "role": "AI",
+        "message": "That\u2019s a valuable perspective. Have you considered ways to reinforce that respect within the school environment?"
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I\u2019m worried about my retirement. I\u2019ve put aside savings and have some land, but I feel like those are the only real securities."
+      },
+      {
+        "role": "AI",
+        "message": "It\u2019s wise to have tangible assets for security. How do you feel about diversifying your investments or exploring passive income streams?"
+      },
+      {
+        "role": "person",
+        "message": "I don\u2019t trust many financial options; I\u2019ve always believed that the effort I put into something\u2014like my land and savings\u2014makes it truly mine."
+      },
+      {
+        "role": "AI",
+        "message": "Your belief in the value of personal effort is strong. Perhaps we can look at ways to enhance what you already own, such as improving your property or creating a small community garden?"
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 99,
+    "persona_name": "User 100",
+    "place": "",
+    "demographics": "Woman, 52, Kottayam, school teacher, nearing retirement",
+    "beliefs": "Believes teaching is a service, not just a job. Thinks younger generations are losing respect for elders. Feels savings and land are the only true security.",
+    "biases": "IKEA effect",
+    "timestamp": "2025-09-17T02:55:04.330190"
+  },
+  "reasoning": "Need two conversations, each 4 exchanges. Reflect beliefs: teaching as service; respect lost; savings/land security; IKEA effect (value from effort). Use realistic tone. Return JSON."
+}

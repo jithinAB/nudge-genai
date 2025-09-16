@@ -1,0 +1,53 @@
+{
+  "row_number": 77,
+  "persona_name": "User 78",
+  "timestamp": "2025-09-17T02:29:29.170466",
+  "conversations": {
+    "scenario_1": [
+      {
+        "role": "person",
+        "message": "Hey AI, I'm planning a neighborhood potluck next Saturday. I want everyone to feel comfortable and participate."
+      },
+      {
+        "role": "AI",
+        "message": "That sounds wonderful! Potlucks are great for building community bonds. Would you like some recipe ideas or tips on how to encourage participation?"
+      },
+      {
+        "role": "person",
+        "message": "Sure, maybe something simple that kids can help with too. Also, I noticed a few neighbors already signed up on the group chat\u2014do you think that will motivate others to join?"
+      },
+      {
+        "role": "AI",
+        "message": "Absolutely! Seeing friends sign up often gives people confidence that it's a safe and enjoyable event. We could highlight those sign-ups in your invitation to reinforce that social proof."
+      }
+    ],
+    "scenario_2": [
+      {
+        "role": "person",
+        "message": "I need help creating a daily routine for my students that includes patience exercises."
+      },
+      {
+        "role": "AI",
+        "message": "Great idea! A consistent schedule can really help children feel secure. Would you like a sample timetable or specific activities to incorporate?"
+      },
+      {
+        "role": "person",
+        "message": "A sample would be nice. Also, I\u2019ve heard other teachers use breathing exercises before class\u2014does that seem effective?"
+      },
+      {
+        "role": "AI",
+        "message": "Yes, many educators find short breathing breaks improve focus and empathy. Including a few minutes of guided breathing at the start of each lesson is a proven strategy."
+      }
+    ]
+  },
+  "metadata": {
+    "row_number": 77,
+    "persona_name": "User 78",
+    "place": "",
+    "demographics": "White American woman, 32, elementary school teacher, married.",
+    "beliefs": "Values patience and empathy in raising children, thinks communities are stronger when neighbours interact regularly, finds routine comforting.",
+    "biases": "Social proof ",
+    "timestamp": "2025-09-17T02:29:29.170349"
+  },
+  "reasoning": "Need two conversations. Reflect patience, empathy, community, routine. Social proof bias: likes to see others doing same. Provide JSON only."
+}
