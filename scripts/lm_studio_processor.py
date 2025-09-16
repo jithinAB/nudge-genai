@@ -50,13 +50,23 @@ SAVE_INTERVAL = 1  # Save checkpoint after every processed row for safety
 TEMPERATURE = 0.7
 MAX_TOKENS = 1500  # Optimized for shorter, complete JSON responses
 
-# ======================== PROMPT TEMPLATE ========================
+# ======================== PROMPT MANAGEMENT ========================
 
-PROMPT_TEMPLATE = """Person Profile:
+def load_prompt_template(prompt_name="scenario_to_convo.txt"):
+    """Load prompt template from the prompts folder"""
+    # Get the path to the prompts folder
+    script_dir = Path(__file__).parent
+    prompts_dir = script_dir.parent / "prompts"
+    prompt_path = prompts_dir / prompt_name
+
+    # Fallback to embedded prompt if file doesn't exist
+    if not prompt_path.exists():
+        logger.warning(f"Prompt file not found: {prompt_path}, using embedded prompt")
+        return """Person Profile:
 Location: {place}
 Demographics: {demographics}
 Beliefs: {beliefs}
-Cognitive Biases: {bias}
+Cognitive Biases: {biases}
 
 Task: Create 2 realistic conversations between this person and an AI assistant.
 Each conversation should have 3-4 exchanges and reflect the person's beliefs and biases.
@@ -65,7 +75,8 @@ Think step by step about how this person would interact based on their profile.
 
 Return ONLY valid JSON in this format:
 {{
-  "Conversations": {{
+  "reasoning": "Your step-by-step reasoning about how to craft these conversations",
+  "conversations": {{
     "scenario_1": [
       {{"role": "person", "message": "..."}},
       {{"role": "AI", "message": "..."}},
@@ -80,6 +91,19 @@ Return ONLY valid JSON in this format:
     ]
   }}
 }}"""
+
+    try:
+        with open(prompt_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+            logger.info(f"Loaded prompt template from {prompt_path}")
+            return content
+    except Exception as e:
+        logger.error(f"Error loading prompt template: {e}")
+        # Return embedded prompt as fallback
+        return load_prompt_template.__defaults__[0]
+
+# Load the prompt template at module level
+PROMPT_TEMPLATE = load_prompt_template()
 
 # ======================== DATA STRUCTURES ========================
 
@@ -300,10 +324,14 @@ def parse_json_response(response: str) -> Optional[Dict]:
         # First attempt - try parsing as-is
         try:
             parsed = json.loads(response)
-            if "Conversations" in parsed:
+            # Handle both 'Conversations' and 'conversations' keys
+            if "Conversations" in parsed or "conversations" in parsed:
+                # Normalize to 'Conversations' for backward compatibility
+                if "conversations" in parsed and "Conversations" not in parsed:
+                    parsed["Conversations"] = parsed["conversations"]
                 return parsed
             else:
-                logger.warning("JSON missing 'Conversations' key, wrapping response")
+                logger.warning("JSON missing conversation key, wrapping response")
                 return {"Conversations": parsed}
         except json.JSONDecodeError:
             pass
@@ -404,13 +432,23 @@ async def process_row(
     beliefs = row.get('Beliefs', '')
     biases = row.get('Biases', '')
 
-    # Format prompt
-    prompt = PROMPT_TEMPLATE.format(
-        place=place,
-        demographics=demographics,
-        beliefs=beliefs,
-        bias=biases
-    )
+    # Format prompt using the template
+    # Handle both 'bias' and 'biases' as parameter names for backward compatibility
+    try:
+        prompt = PROMPT_TEMPLATE.format(
+            place=place,
+            demographics=demographics,
+            beliefs=beliefs,
+            biases=biases  # Use 'biases' to match the new template
+        )
+    except KeyError:
+        # Fallback if template uses 'bias' instead of 'biases'
+        prompt = PROMPT_TEMPLATE.format(
+            place=place,
+            demographics=demographics,
+            beliefs=beliefs,
+            bias=biases
+        )
 
     logger.info(f"Processing Row {row_number}: {persona_name}")
 
