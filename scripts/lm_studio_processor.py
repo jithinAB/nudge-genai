@@ -39,41 +39,44 @@ FINAL_OUTPUT_FILE = "synthetic_conversations_final.json"
 INDIVIDUAL_FILES = True  # Save individual files for each row
 
 # Processing configuration
-MAX_CONCURRENT_REQUESTS = 3  # Number of parallel requests
-REQUESTS_PER_MINUTE = 20  # Rate limit
+MAX_CONCURRENT_REQUESTS = 1  # Number of parallel requests (set to 1 per user request)
+REQUESTS_PER_MINUTE = 10  # Rate limit (reduced for stability)
 MAX_RETRIES = 3  # Maximum retry attempts per request
 RETRY_DELAY_BASE = 2  # Base delay for exponential backoff (seconds)
-REQUEST_TIMEOUT = 120  # Timeout for each request (seconds)
+REQUEST_TIMEOUT = 180  # Timeout for each request (increased for complex prompts)
 SAVE_INTERVAL = 5  # Save checkpoint every N processed rows
 
 # Model parameters
 TEMPERATURE = 0.7
-MAX_TOKENS = 4000
+MAX_TOKENS = 2000  # Increased to ensure complete JSON responses
 
 # ======================== PROMPT TEMPLATE ========================
 
-PROMPT_TEMPLATE = """You are an expert psychologist who is capable of simulating real conversation of a person with an AI in multiple scenarios after understanding his beliefs, potential biases, demographics etc.
-
-Detailed instructions to follow:
-1. You will be given Place from where the person is (Place), Demographics of the person (demographics), Some existing identified beliefs of the person (beliefs), Some identified cognitive biases that the person have (biases), combined together represents a Person.
-2. Your objective is to understand those thoroughly and assume the personality, character, biases of that person.
-3. Once you assume that personality, create multi-turn (min 10 turns per conversations) conversations between this person and an AI chat agent.
-4. Based on the demographics of the person and his beliefs, find relevant scenarios (both personal, professional, emotional etc) and simulate conversations of that person with an AI system like ChatGPT.
-5. You are free to form derived beliefs (only if relevant, and can be directly derived from or reduced to the given beliefs) and use them for the simulated conversations.
-6. Ensure that all the conversations are grounded and relevant to real world conversations.
-7. Some conversations can be really elaborate, long, combining multiple beliefs, derived beliefs, and biases.
-
-Based on the provided information, first assume the personality of the character and based on that simulate the conversation. Think step by step and ensure that every conversations are relevant and grounded to reality.
-
-Return the result as a JSON with the following Keys:
-Conversations: Dict (scenario_name: List[Dict{role: person or AI, message: "message"}])
-
----
-
+PROMPT_TEMPLATE = """Person profile:
 Place: {place}
-demographics: {demographics}
-beliefs: {beliefs}
-biases: {bias}"""
+Demographics: {demographics}
+Beliefs: {beliefs}
+Biases: {bias}
+
+Task: Create 2 short conversations (3-4 exchanges each) between this person and an AI.
+
+Output format - PURE JSON ONLY:
+{{
+  "Conversations": {{
+    "topic1": [
+      {{"role": "person", "message": "text"}},
+      {{"role": "AI", "message": "text"}},
+      {{"role": "person", "message": "text"}},
+      {{"role": "AI", "message": "text"}}
+    ],
+    "topic2": [
+      {{"role": "person", "message": "text"}},
+      {{"role": "AI", "message": "text"}},
+      {{"role": "person", "message": "text"}},
+      {{"role": "AI", "message": "text"}}
+    ]
+  }}
+}}"""
 
 # ======================== DATA STRUCTURES ========================
 
@@ -213,7 +216,7 @@ async def call_lm_studio_api(
             "messages": [
                 {
                     "role": "system",
-                    "content": "You are a helpful assistant that generates synthetic conversation data. Always respond with valid JSON."
+                    "content": "You are a JSON API that ONLY returns valid JSON. Never include markdown formatting, code blocks, or explanatory text. Return ONLY the JSON object with no additional formatting."
                 },
                 {
                     "role": "user",
@@ -256,22 +259,80 @@ async def call_lm_studio_api(
             return False, None, None, f"Unexpected error: {str(e)}"
 
 def parse_json_response(response: str) -> Optional[Dict]:
-    """Parse JSON from model response, handling markdown code blocks"""
+    """Parse JSON from model response, handling markdown code blocks and various formats"""
     try:
+        original_response = response
+
         # Remove markdown code blocks if present
-        if "```json" in response:
-            start = response.find("```json") + 7
+        if "```json" in response.lower():
+            start = response.lower().find("```json") + 7
             end = response.find("```", start)
-            response = response[start:end].strip()
+            if end != -1:
+                response = response[start:end].strip()
         elif "```" in response:
             start = response.find("```") + 3
             end = response.find("```", start)
-            response = response[start:end].strip()
+            if end != -1:
+                response = response[start:end].strip()
 
-        return json.loads(response)
+        # Try to find JSON structure if not already clean
+        if not response.strip().startswith('{'):
+            # Look for JSON-like structure in the response
+            json_start = response.find('{')
+            if json_start != -1:
+                # Find the matching closing brace
+                brace_count = 0
+                json_end = json_start
+                for i in range(json_start, len(response)):
+                    if response[i] == '{':
+                        brace_count += 1
+                    elif response[i] == '}':
+                        brace_count -= 1
+                        if brace_count == 0:
+                            json_end = i + 1
+                            break
+                response = response[json_start:json_end]
+
+        # Clean up common issues
+        response = response.strip()
+
+        # Try to fix truncated JSON by adding missing closing brackets
+        if response and not response.rstrip().endswith('}'):
+            # Count opening and closing braces
+            open_braces = response.count('{')
+            close_braces = response.count('}')
+            missing_braces = open_braces - close_braces
+
+            if missing_braces > 0:
+                response += '}' * missing_braces
+                logger.warning(f"Added {missing_braces} closing braces to fix truncated JSON")
+
+        # Parse the JSON
+        parsed = json.loads(response)
+
+        # Validate structure
+        if "Conversations" in parsed:
+            return parsed
+        else:
+            logger.warning("JSON missing 'Conversations' key, wrapping response")
+            return {"Conversations": parsed}
+
     except json.JSONDecodeError as e:
         logger.error(f"JSON parsing error: {e}")
-        logger.debug(f"Response preview: {response[:200]}...")
+        logger.error(f"Original response preview: {original_response[:500]}...")
+        logger.error(f"Cleaned response preview: {response[:500]}...")
+        # Save problematic response for debugging
+        import hashlib
+        debug_file = f"synthetic_data_output/debug_{hashlib.md5(original_response.encode()).hexdigest()[:8]}.txt"
+        try:
+            with open(debug_file, 'w') as f:
+                f.write(f"Original:\n{original_response}\n\nCleaned:\n{response}")
+            logger.error(f"Saved debug output to {debug_file}")
+        except:
+            pass
+        return None
+    except Exception as e:
+        logger.error(f"Unexpected error parsing JSON: {e}")
         return None
 
 # ======================== ROW PROCESSING ========================
@@ -470,6 +531,9 @@ async def process_csv(resume: bool = True):
     with open(csv_path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         rows = list(reader)
+
+    # Process all rows
+    # rows = rows[:2]  # Uncomment to limit for testing
 
     total_rows = len(rows)
     logger.info(f"Total rows in CSV: {total_rows}")
