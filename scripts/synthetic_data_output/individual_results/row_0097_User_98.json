@@ -1,42 +1,106 @@
 {
   "row_number": 97,
   "persona_name": "User 98",
-  "timestamp": "2025-09-17T02:53:02.037400",
+  "timestamp": "2025-09-17T05:54:50.190621",
   "conversations": {
     "scenario_1": [
       {
         "role": "person",
-        "message": "I\u2019m thinking about applying to nursing programs in the UK. I\u2019ve heard they\u2019re top-notch and will give me independence."
+        "message": "Hey, I\u2019m thinking about applying for a nursing program in Australia. Do you think that\u2019s a good move? "
       },
       {
         "role": "AI",
-        "message": "That\u2019s a great choice! The UK has excellent clinical training and you\u2019ll gain valuable experience abroad. What aspects are most important to you?"
+        "message": "Australia has several reputable nursing schools with high employment rates post-graduation. It can offer diverse clinical experience and international exposure."
       },
       {
         "role": "person",
-        "message": "I need a program that offers hands\u2011on practice and flexible part\u2011time work so I can manage my studies and still support my family."
+        "message": "That sounds great, but my family worries about the cost. Is it worth the tuition? "
       },
       {
         "role": "AI",
-        "message": "Many UK nursing schools offer clinical placements with hospitals and allow students to work part\u2011time. Let me find some universities that match those criteria for you."
+        "message": "Tuition varies by institution, but scholarships and part\u2011time work are available for international students. Long\u2011term career benefits can offset initial expenses."
+      },
+      {
+        "role": "person",
+        "message": "I heard that nurses from Australian schools get better job prospects back home too. Is that true? "
+      },
+      {
+        "role": "AI",
+        "message": "Many employers value foreign qualifications, especially if you complete a recognized program. It may enhance your CV and future salary potential."
+      },
+      {
+        "role": "person",
+        "message": "Yeah, I read an article that said graduates from overseas earn 20% more in Kerala after two years. That\u2019s encouraging. "
+      },
+      {
+        "role": "AI",
+        "message": "Statistical data shows higher earnings for nurses with international credentials, but outcomes can vary based on experience and specialty."
+      },
+      {
+        "role": "person",
+        "message": "So if I get a scholarship, I\u2019ll definitely be able to pay it off faster. I\u2019m leaning toward applying now. "
+      },
+      {
+        "role": "AI",
+        "message": "Applying early gives you more time to secure scholarships and prepare for visa requirements."
+      },
+      {
+        "role": "person",
+        "message": "I\u2019ll check the deadlines and gather my documents. Thanks! "
+      },
+      {
+        "role": "AI",
+        "message": "Good luck with your application! Let me know if you need help with any part of the process."
       }
     ],
     "scenario_2": [
       {
         "role": "person",
-        "message": "My parents want me to get married soon, but I\u2019m not ready. They think it\u2019s the right time to settle down."
+        "message": "Do you think I should get married before finishing my MSc? My parents want a daughter who settles down soon. "
       },
       {
         "role": "AI",
-        "message": "It sounds like you\u2019re prioritizing your career goals first. Have you shared with them how a nursing degree abroad could benefit both you and the family in the long run?"
+        "message": "Balancing marriage and career is personal. Many people choose to focus on education first, while others marry early."
       },
       {
         "role": "person",
-        "message": "I told them I\u2019ll wait until I finish my studies, but they keep insisting it\u2019s best to marry now."
+        "message": "I read that women who finish their degrees before marriage have more financial independence. That seems logical. "
       },
       {
         "role": "AI",
-        "message": "You could explain that gaining independence through your education will strengthen your future contributions to the family. Would you like help drafting a respectful conversation with them?"
+        "message": "Completing a degree can provide better job prospects and income, which may contribute to independence in marriage."
+      },
+      {
+        "role": "person",
+        "message": "My mother keeps saying I should marry now because it\u2019s the tradition. But I feel that delaying will give me more stability. "
+      },
+      {
+        "role": "AI",
+        "message": "Tradition is important culturally, but you might consider how a stable career can support future family life."
+      },
+      {
+        "role": "person",
+        "message": "I also heard from a friend who married early and struggled with work-life balance. That\u2019s scary. "
+      },
+      {
+        "role": "AI",
+        "message": "Managing both responsibilities can be challenging for some, though many find ways to balance them successfully."
+      },
+      {
+        "role": "person",
+        "message": "So staying single until I finish my MSc seems safer. My family will understand if I explain the career benefits. "
+      },
+      {
+        "role": "AI",
+        "message": "Communicating your goals clearly can help align expectations with your family\u2019s views."
+      },
+      {
+        "role": "person",
+        "message": "I\u2019ll talk to them about how a strong professional start can benefit us all. Thanks for the perspective! "
+      },
+      {
+        "role": "AI",
+        "message": "You\u2019re welcome! Good luck with your conversation and studies."
       }
     ]
   },
@@ -47,7 +111,7 @@
     "demographics": "Woman, 24, Thrissur, MSc Nursing student, middle-class family",
     "beliefs": "Believes studying abroad is the surest path to independence. Thinks marriage should wait until she builds a career. Feels daughters carry the responsibility of protecting family reputation.",
     "biases": "Confirmation bias ",
-    "timestamp": "2025-09-17T02:53:02.037345"
+    "timestamp": "2025-09-17T05:54:50.190508"
   },
-  "reasoning": "Need two scenarios. Reflect confirmation bias: she will seek info supporting studying abroad, dismiss local options. Also think marriage later. Provide realistic exchanges. Return JSON."
+  "reasoning": "Need JSON with reasoning and two scenarios each 10-15 exchanges. Provide concise messages. Let's craft scenario1 about studying abroad, confirmation bias. Scenario2 about marriage career balance. Include subtle bias like repeating same evidence. Let's produce."
 }

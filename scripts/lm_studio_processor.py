@@ -35,7 +35,7 @@ MODEL_NAME = "openai/gpt-oss-20b"  # Updated to your loaded model name
 CSV_FILE = "../data/data/scenario.csv"  # Relative path from scripts folder
 OUTPUT_DIR = "synthetic_data_output"
 CHECKPOINT_FILE = "processing_checkpoint.json"
-FINAL_OUTPUT_FILE = "data_v1.json"  # Main output file with all data including reasoning
+FINAL_OUTPUT_FILE = "data_v2.json"  # Main output file with all data including reasoning
 INDIVIDUAL_FILES = True  # Save individual files for each row
 
 # Processing configuration
@@ -48,7 +48,7 @@ SAVE_INTERVAL = 1  # Save checkpoint after every processed row for safety
 
 # Model parameters
 TEMPERATURE = 0.7
-MAX_TOKENS = 1500  # Optimized for shorter, complete JSON responses
+MAX_TOKENS = 4000  # Increased for longer conversations (10-15 exchanges)
 
 # ======================== PROMPT MANAGEMENT ========================
 
@@ -61,7 +61,7 @@ def load_prompt_template(prompt_name="scenario_to_convo.txt"):
 
     # Fallback to embedded prompt if file doesn't exist
     if not prompt_path.exists():
-        logger.warning(f"Prompt file not found: {prompt_path}, using embedded prompt")
+        print(f"Warning: Prompt file not found: {prompt_path}, using embedded prompt")
         return """Person Profile:
 Location: {place}
 Demographics: {demographics}
@@ -95,12 +95,12 @@ Return ONLY valid JSON in this format:
     try:
         with open(prompt_path, 'r', encoding='utf-8') as f:
             content = f.read()
-            logger.info(f"Loaded prompt template from {prompt_path}")
+            print(f"Info: Loaded prompt template from {prompt_path}")
             return content
     except Exception as e:
-        logger.error(f"Error loading prompt template: {e}")
+        print(f"Error loading prompt template: {e}")
         # Return embedded prompt as fallback
-        return load_prompt_template.__defaults__[0]
+        return None  # Will use the embedded prompt above
 
 # Load the prompt template at module level
 PROMPT_TEMPLATE = load_prompt_template()
