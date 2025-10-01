@@ -24,12 +24,16 @@ from asyncio import Semaphore
 import signal
 from openai import AsyncOpenAI
 import tiktoken
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # ======================== CONFIGURATION ========================
 
 # API Configuration
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")  # Set your OpenAI API key
-MODEL_NAME = "gpt-4o-mini"  # Can be changed to gpt-4, gpt-3.5-turbo, etc.
+MODEL_NAME = "gpt-5"  # Can be changed to gpt-4, gpt-3.5-turbo, etc.
 
 # File paths
 CSV_FILE = "../data/data/scenario.csv"
