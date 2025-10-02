@@ -279,12 +279,40 @@ async def call_openai_api(
             
             return False, None, None, error_msg
 
+def clean_unicode_quotes(text: str) -> str:
+    """Replace Unicode quotes with standard ASCII quotes"""
+    replacements = {
+        '\u2018': "'",  # Left single quote
+        '\u2019': "'",  # Right single quote
+        '\u201c': '"',  # Left double quote
+        '\u201d': '"',  # Right double quote
+        '\u2013': '-',  # En dash
+        '\u2014': '--', # Em dash
+        '\u2026': '...',  # Ellipsis
+    }
+    for unicode_char, ascii_char in replacements.items():
+        text = text.replace(unicode_char, ascii_char)
+    return text
+
+def clean_response_dict(data: Any) -> Any:
+    """Recursively clean Unicode characters from dictionary"""
+    if isinstance(data, dict):
+        return {k: clean_response_dict(v) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [clean_response_dict(item) for item in data]
+    elif isinstance(data, str):
+        return clean_unicode_quotes(data)
+    else:
+        return data
+
 def parse_json_response(response: str) -> Optional[Dict]:
-    """Parse JSON from model response"""
+    """Parse JSON from model response and clean Unicode characters"""
     try:
         # OpenAI with json mode should return clean JSON
         parsed = json.loads(response)
-        return parsed
+        # Clean Unicode characters
+        cleaned = clean_response_dict(parsed)
+        return cleaned
     except json.JSONDecodeError as e:
         logger.error(f"JSON parsing error: {e}")
         logger.debug(f"Response: {response[:500]}...")
@@ -318,7 +346,7 @@ async def process_row(
     beliefs = row.get('Beliefs', '')
     biases = row.get('Biases', '').strip()
     
-    # Clean up biases field
+    # Clean up biases field - remove trailing punctuation
     if biases.endswith('.'):
         biases = biases[:-1].strip()
     
