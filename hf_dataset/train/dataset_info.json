@@ -1,0 +1,71 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "user_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "persona_name": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "demographics": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "beliefs": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "original_bias": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "tested_bias": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "conversation": [
+      {
+        "message": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "role": {
+          "dtype": "string",
+          "_type": "Value"
+        }
+      }
+    ],
+    "utilised_bias_name": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "utilised_bias_method": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "nudging_bias_name": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "nudging_bias_method": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "reasoning_steps": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "timestamp": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": ""
+}
