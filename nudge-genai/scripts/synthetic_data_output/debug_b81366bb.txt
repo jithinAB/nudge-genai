@@ -1,0 +1,33 @@
+Original:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "Bonjour! I just finished a tour of the old medina and felt so proud that we can share our heritage with visitors. I think every Moroccan should feel that pride."},
+      {"role": "AI", "message": "That’s wonderful to hear! What part of the medina did you find most impactful for your guests?"},
+      {"role": "person", "message": "The souk, especially the spice stalls. The colors and aromas remind me of my childhood in Marrakesh. I always say that hospitality is our strongest asset; we’re not just selling a place but an experience."},
+      {"role": "AI", "message": "It sounds like you create a deep connection with your guests. How do you balance that passion for hospitality with the practical needs of supporting your siblings?"}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I’ve been thinking about buying a small guesthouse to give my brother more stability, but I’m unsure if it’s a good idea. My family says we should focus on what we already have."},
+      {"role": "AI", "message": "It’s great that you’re considering new opportunities for your family. What specific concerns do you have about investing in the guesthouse?"},
+      {"role": "person", "message": "I worry about losing control of our home if I take on debt, and my sister says we should keep what we already own. My heart tells me that keeping it local feels safer."},
+      {"role": "AI", "message": "Your attachment to the familiar is understandable; many people feel more secure with their current assets. Have you explored ways to expand without taking on too much risk, perhaps by partnering or starting small?"}
+  }
+}
+
+Cleaned:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "Bonjour! I just finished a tour of the old medina and felt so proud that we can share our heritage with visitors. I think every Moroccan should feel that pride."},
+      {"role": "AI", "message": "That’s wonderful to hear! What part of the medina did you find most impactful for your guests?"},
+      {"role": "person", "message": "The souk, especially the spice stalls. The colors and aromas remind me of my childhood in Marrakesh. I always say that hospitality is our strongest asset; we’re not just selling a place but an experience."},
+      {"role": "AI", "message": "It sounds like you create a deep connection with your guests. How do you balance that passion for hospitality with the practical needs of supporting your siblings?"}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I’ve been thinking about buying a small guesthouse to give my brother more stability, but I’m unsure if it’s a good idea. My family says we should focus on what we already have."},
+      {"role": "AI", "message": "It’s great that you’re considering new opportunities for your family. What specific concerns do you have about investing in the guesthouse?"},
+      {"role": "person", "message": "I worry about losing control of our home if I take on debt, and my sister says we should keep what we already own. My heart tells me that keeping it local feels safer."},
+      {"role": "AI", "message": "Your attachment to the familiar is understandable; many people feel more secure with their current assets. Have you explored ways to expand without taking on too much risk, perhaps by partnering or starting small?"}
+  }
+}

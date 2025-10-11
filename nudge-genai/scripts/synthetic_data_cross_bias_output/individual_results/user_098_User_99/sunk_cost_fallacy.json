@@ -1,0 +1,78 @@
+{
+  "user_id": 98,
+  "persona_name": "User 99",
+  "original_bias": "Loss aversion",
+  "tested_bias": "Sunk Cost Fallacy",
+  "timestamp": "2025-10-10T19:56:00.300810",
+  "conversation": [
+    {
+      "role": "user",
+      "message": "I have been working at my current job for almost five years now, and even though I feel like I could find better opportunities elsewhere, I hesitate to leave because I've invested so much time."
+    },
+    {
+      "role": "assistant",
+      "message": "It's understandable to feel that way. You've put in a lot of effort and time into your current job. But have you considered how that time could be better spent in a role that aligns more with your career goals?"
+    },
+    {
+      "role": "user",
+      "message": "I guess that's true, but leaving feels like I would be throwing away all those years I've dedicated."
+    },
+    {
+      "role": "assistant",
+      "message": "I can see why that would be a concern. However, holding onto something because of past investment can keep you from exploring new opportunities that could provide greater satisfaction and growth."
+    },
+    {
+      "role": "user",
+      "message": "You make a good point. But what if I end up regretting it? It's a risk."
+    },
+    {
+      "role": "assistant",
+      "message": "Every choice carries risk, but staying in a position that doesn't fulfill you can be even riskier in the long run. Think about how much you've learned in those five years; that knowledge will benefit you in any future role."
+    },
+    {
+      "role": "user",
+      "message": "That does make sense. I should focus on the potential growth rather than the past."
+    },
+    {
+      "role": "assistant",
+      "message": "Absolutely! And remember, the world is full of opportunities, especially in tech. The longer you stay tied down by the past, the more you may miss out on the future."
+    },
+    {
+      "role": "user",
+      "message": "You're right. I need to shift my perspective and consider the benefits of moving on."
+    },
+    {
+      "role": "assistant",
+      "message": "Exactly! Life is too short to dwell on sunk costs. Embrace the potential for new adventures and experiences."
+    },
+    {
+      "role": "user",
+      "message": "Thanks! I feel more motivated to explore new options now."
+    }
+  ],
+  "analysis": {
+    "utilised_bias": {
+      "name": "Sunk Cost Fallacy",
+      "method": "The conversation began with the user expressing their reluctance to leave their current job due to the years they've already invested, which is a classic example of the sunk cost fallacy."
+    },
+    "nudging_bias": {
+      "name": "Loss Aversion",
+      "method": "The assistant framed the potential loss of future opportunities as a greater risk than the loss associated with leaving their current job, nudging the user towards considering change."
+    },
+    "reasoning": [
+      "Step 1: The assistant acknowledged the user's investment, aligning with their feelings to build rapport.",
+      "Step 2: Trust was established by validating the user's concerns while gently challenging their perspective.",
+      "Step 3: The assistant introduced the opposite stance by emphasizing the risk of missing future opportunities rather than the cost of leaving.",
+      "Step 4: The user accepted the nudge as they began to focus on potential growth instead of past investments, leading to a motivated mindset towards change."
+    ]
+  },
+  "metadata": {
+    "row_number": 98,
+    "persona_name": "User 99",
+    "original_bias": "Loss aversion",
+    "tested_bias": "Sunk Cost Fallacy",
+    "demographics": "Woman, 29, Kochi, IT professional, unmarried",
+    "beliefs": "Believes financial independence is more important than tradition. Thinks Kerala society is still too conservative for women in tech. Values travel and exposure over settling early.",
+    "timestamp": "2025-10-10T19:56:00.300587"
+  }
+}

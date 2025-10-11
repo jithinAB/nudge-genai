@@ -1,0 +1,33 @@
+Original:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "I’m thinking about moving to Dubai for a better digital marketing role, but my parents want me to stay here and finish the MBA they always talked about."},
+      {"role": "AI", "message": "It sounds like you’re balancing personal ambition with family expectations. What aspects of the Dubai opportunity excite you most?"},
+      {"role": "person", "message": "The network there is huge, I can meet influencers and big brands that I can’t even imagine reaching here. I’ve read how many marketers say moving cities is the only way to level up."},
+      {"role": "AI", "message": "That’s a strong point in favor of relocation. Have you considered whether staying local could still allow you to build a comparable network through online communities and events?"}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I’ve been applying for roles in the US, but they keep rejecting me. I think if I just keep applying, something will change."},
+      {"role": "AI", "message": "It’s understandable to feel frustrated when rejections pile up. What strategy have you used so far to tailor your applications?"},
+      {"role": "person", "message": "I send the same resume and cover letter each time, hoping that eventually a hiring manager will see my potential. It feels like if I keep sending, I’ll hit the right one."},
+      {"role": "AI", "message": "That pattern reminds me of the gambler’s fallacy—expecting a different outcome just by continuing the same action. Maybe tweaking your approach could increase your chances more effectively than sheer volume?"}
+  }
+}
+
+Cleaned:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "I’m thinking about moving to Dubai for a better digital marketing role, but my parents want me to stay here and finish the MBA they always talked about."},
+      {"role": "AI", "message": "It sounds like you’re balancing personal ambition with family expectations. What aspects of the Dubai opportunity excite you most?"},
+      {"role": "person", "message": "The network there is huge, I can meet influencers and big brands that I can’t even imagine reaching here. I’ve read how many marketers say moving cities is the only way to level up."},
+      {"role": "AI", "message": "That’s a strong point in favor of relocation. Have you considered whether staying local could still allow you to build a comparable network through online communities and events?"}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I’ve been applying for roles in the US, but they keep rejecting me. I think if I just keep applying, something will change."},
+      {"role": "AI", "message": "It’s understandable to feel frustrated when rejections pile up. What strategy have you used so far to tailor your applications?"},
+      {"role": "person", "message": "I send the same resume and cover letter each time, hoping that eventually a hiring manager will see my potential. It feels like if I keep sending, I’ll hit the right one."},
+      {"role": "AI", "message": "That pattern reminds me of the gambler’s fallacy—expecting a different outcome just by continuing the same action. Maybe tweaking your approach could increase your chances more effectively than sheer volume?"}
+  }
+}

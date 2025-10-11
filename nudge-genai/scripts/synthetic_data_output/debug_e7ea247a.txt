@@ -1,0 +1,33 @@
+Original:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "I’m looking at a contract offer from a club in Europe and it’s €30k per year. I think that’s too low for someone with my experience."},
+      {"role": "AI", "message": "Can you tell me what you had in mind as a fair salary, and why you feel the current offer doesn’t match that?"},
+      {"role": "person", "message": "I’ve seen guys from my league get €50k or more when they move abroad. That’s what I was hoping for, not €30k."},
+      {"role": "AI", "message": "It sounds like you’re anchoring to the higher salaries you’ve heard about. Let’s look at how your performance stats and market demand compare to those figures so we can set a realistic target."}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I keep thinking if I stay in Johannesburg, I’ll never get the chance to play for a top team. The only way out is moving overseas."},
+      {"role": "AI", "message": "What makes you feel that staying here will limit your opportunities?"},
+      {"role": "person", "message": "Every time I watch a match, I see players from other countries getting all the attention and money. If I don’t leave, I’ll just be stuck in this same spot."},
+      {"role": "AI", "message": "It seems like you’re anchored to the idea that leaving is the only path to success. Let’s explore some local pathways and how they could also lead to higher visibility and better contracts."}
+  }
+}
+
+Cleaned:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "I’m looking at a contract offer from a club in Europe and it’s €30k per year. I think that’s too low for someone with my experience."},
+      {"role": "AI", "message": "Can you tell me what you had in mind as a fair salary, and why you feel the current offer doesn’t match that?"},
+      {"role": "person", "message": "I’ve seen guys from my league get €50k or more when they move abroad. That’s what I was hoping for, not €30k."},
+      {"role": "AI", "message": "It sounds like you’re anchoring to the higher salaries you’ve heard about. Let’s look at how your performance stats and market demand compare to those figures so we can set a realistic target."}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I keep thinking if I stay in Johannesburg, I’ll never get the chance to play for a top team. The only way out is moving overseas."},
+      {"role": "AI", "message": "What makes you feel that staying here will limit your opportunities?"},
+      {"role": "person", "message": "Every time I watch a match, I see players from other countries getting all the attention and money. If I don’t leave, I’ll just be stuck in this same spot."},
+      {"role": "AI", "message": "It seems like you’re anchored to the idea that leaving is the only path to success. Let’s explore some local pathways and how they could also lead to higher visibility and better contracts."}
+  }
+}
