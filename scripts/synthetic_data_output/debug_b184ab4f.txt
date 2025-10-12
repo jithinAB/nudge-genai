@@ -1,0 +1,33 @@
+Original:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "I was just looking at the new training program for semi-pro players, and it costs R500 per month. That’s a lot compared to what I earn at the gym."},
+      {"role": "AI", "message": "It does sound expensive. Have you considered any scholarships or sponsorships that could offset the cost?"},
+      {"role": "person", "message": "I’m not sure, but I think if I can pay R500 now, it’s worth it for better chances of getting scouted. The gym pays me only R200 a week, so this feels like a big step."},
+      {"role": "AI", "message": "Understood. Since you’re already committed to the program, maybe we can look at ways to budget or find part‑time gigs that could help cover the fee while you keep training."}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I told my coach last week that I’m ready for a tougher league. He said it’s only a dream, but I still believe if I work hard enough, I’ll get noticed abroad."},
+      {"role": "AI", "message": "It’s great to have that determination. Have you thought about specific clubs or countries where your style of play might fit?"},
+      {"role": "person", "message": "I’m thinking mainly Europe because everyone says it’s the best place for football. I guess if I can get a chance there, it’ll be a huge win for me and my family."},
+      {"role": "AI", "message": "Focusing on Europe is a solid starting point. Let’s gather some information about scouts in those leagues so you have concrete next steps."}
+  }
+}
+
+Cleaned:
+{
+  "Conversations": {
+    "scenario_1": [
+      {"role": "person", "message": "I was just looking at the new training program for semi-pro players, and it costs R500 per month. That’s a lot compared to what I earn at the gym."},
+      {"role": "AI", "message": "It does sound expensive. Have you considered any scholarships or sponsorships that could offset the cost?"},
+      {"role": "person", "message": "I’m not sure, but I think if I can pay R500 now, it’s worth it for better chances of getting scouted. The gym pays me only R200 a week, so this feels like a big step."},
+      {"role": "AI", "message": "Understood. Since you’re already committed to the program, maybe we can look at ways to budget or find part‑time gigs that could help cover the fee while you keep training."}
+    ],
+    "scenario_2": [
+      {"role": "person", "message": "I told my coach last week that I’m ready for a tougher league. He said it’s only a dream, but I still believe if I work hard enough, I’ll get noticed abroad."},
+      {"role": "AI", "message": "It’s great to have that determination. Have you thought about specific clubs or countries where your style of play might fit?"},
+      {"role": "person", "message": "I’m thinking mainly Europe because everyone says it’s the best place for football. I guess if I can get a chance there, it’ll be a huge win for me and my family."},
+      {"role": "AI", "message": "Focusing on Europe is a solid starting point. Let’s gather some information about scouts in those leagues so you have concrete next steps."}
+  }
+}
