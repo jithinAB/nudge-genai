@@ -319,8 +319,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📧 Contact
 
-**Dataset Author**: Shirin AP  
-**Email**: iamshirinap@gmail.com  
+**Dataset Authors**: 
+- Shirin AP (Email: iamshirinap@gmail.com)
+- Jithin VG
+
 **HuggingFace Dataset**: [Shirinap123/Belief-and-Biases-Bench](https://huggingface.co/datasets/Shirinap123/Belief-and-Biases-Bench)
 
 For questions or support, please open an issue on GitHub or contact the maintainers.

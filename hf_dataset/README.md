@@ -154,7 +154,7 @@ If you use this dataset in your research, please cite:
 ```bibtex
 @dataset{belief_biases_bench_2025,
   title={Belief and Biases Bench: A Synthetic Dataset for Cognitive Bias Detection},
-  author={Shirin AP},
+  author={Shirin AP and Jithin VG},
   year={2025},
   month={10},
   publisher={Hugging Face},
@@ -166,10 +166,12 @@ If you use this dataset in your research, please cite:
 
 This dataset is released under the Apache 2.0 License.
 
-## Author
+## Authors
 
 **Shirin AP**  
 Email: iamshirinap@gmail.com
+
+**Jithin VG**
 
 ## Acknowledgments
 
